@@ -1,0 +1,20 @@
+{
+  "include": ["typings"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "sourceMap": true,
+    "declaration": true,
+    "downlevelIteration": true,
+    "resolveJsonModule": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "newLine": "lf",
+    "strict": false,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
+  }
+}

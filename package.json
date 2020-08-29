@@ -1,0 +1,19 @@
+{
+  "name": "sketch-typings",
+  "version": "1.0.0",
+  "description": "",
+  "repository": "https://github.com/arvinxx/sketch-typings",
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "typings": "typings",
+  "files": [
+    "typings"
+  ],
+  "devDependencies": {
+    "@sketch-hq/sketch-file-format-ts": "^5.1.0",
+    "np": "^6.4.0",
+    "prettier": "^2.1.1",
+    "typescript": "^3.9.5"
+  }
+}
