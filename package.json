@@ -1,11 +1,16 @@
 {
   "name": "sketch-typings",
   "version": "0.0.1",
-  "description": "",
-  "repository": "https://github.com/arvinxx/sketch-typings",
+  "description": "Community built set of typescript declarations for writing Sketch plugins.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arvinxx/sketch-typings.git"
+  },
   "scripts": {
     "tsc": "tsc"
   },
+  "license": "MIT",
+  "author": "Arvin Xu <arvinx@foxmail.com> (https://www.arvinx.com)",
   "typings": "typings",
   "files": [
     "typings"
@@ -15,5 +20,9 @@
     "np": "^6.4.0",
     "prettier": "^2.1.1",
     "typescript": "^3.9.5"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/arvinxx/sketch-typings/issues"
+  },
+  "homepage": "https://github.com/arvinxx/sketch-typings#readme"
 }
