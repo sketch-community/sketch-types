@@ -1,5 +1,4 @@
 {
-  "include": ["typings"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "target": "es5",
@@ -11,6 +10,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "emitDecoratorMetadata": true,
+    "typeRoots": ["./typings"],
     "experimentalDecorators": true,
     "newLine": "lf",
     "strict": false,

@@ -1,5 +1,4 @@
 declare module 'sketch/dom' {
-  /// <reference path="../AppKit/NSFont.d.ts" />
   class dom {
     /**
      * Export an object, using the options supplied.
@@ -2522,7 +2521,6 @@ declare module 'sketch' {
   class sketch {
     static export: typeof dom.export;
   }
-
   namespace sketch {
     export const version: { readonly api: string; readonly sketch: string };
     // it'd be really nice if we could export * from dom, but https://github.com/Microsoft/TypeScript/issues/4336
