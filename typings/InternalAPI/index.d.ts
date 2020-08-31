@@ -1,10 +1,11 @@
+/// <reference path="../AppKit/index.d.ts" />
+
 // Internal API for full access to the Sketch Objective-C runtime
 
 // For a deeper integration with Sketch,
 // the internal APIs provides access to almost every aspect of the app.
 // Use CocoaScript or Objective-C if you’re building plugins loading native frameworks.
 
-declare class MSArtboardPresetsViewControllerDelegate {}
 declare class MSAssetLibraryDelegate {}
 declare class MSAssetPickerHeaderViewDelegate {}
 declare class MSAssetPreferenceItemDelegate {}
@@ -2313,125 +2314,6 @@ declare class MSArtboardSystemCategories extends NSObject {
   init(...args: any[]): any;
 }
 
-declare class MSArtboardTitleItem extends NSObject {
-  /* typeEncoding=@"NSAttributedString", ivar=_attributedTitle, attributes=(retain,nonatomic) */
-  attributedTitle(): NSAttributedString;
-  /* typeEncoding={?=iiii}, ivar=_bounds, attributes=(assign,nonatomic) */
-  bounds(): any;
-  /* typeEncoding=^{CGColor=}, ivar=_color, attributes=(assign,nonatomic) */
-  color(): any;
-  /* typeEncoding=c, ivar=_isFlowHome, attributes=(assign,nonatomic) */
-  isFlowHome(): boolean;
-  /* typeEncoding=c, ivar=_isSymbolMaster, attributes=(assign,nonatomic) */
-  isSymbolMaster(): boolean;
-  /* typeEncoding=d, ivar=_titleCompression, attributes=(assign,nonatomic) */
-  titleCompression(): number;
-
-  /* typeEncoding=v16@0:8 */
-  _cxx_destruct(): void;
-  /* typeEncoding=@16@0:8 */
-  attributedTitle(...args: any[]): any;
-  /* typeEncoding={?=iiii}16@0:8 */
-  bounds(...args: any[]): any;
-  /* typeEncoding=^{CGColor=}16@0:8 */
-  color(...args: any[]): any;
-  /* typeEncoding=v16@0:8 */
-  dealloc(): void;
-  /* typeEncoding=c24@0:8@16 */
-  isEqualToItem(...args: any[]): any;
-  /* typeEncoding=c16@0:8 */
-  isFlowHome(...args: any[]): any;
-  /* typeEncoding=c16@0:8 */
-  isSymbolMaster(...args: any[]): any;
-  /* typeEncoding=v24@0:8@16 */
-  setAttributedTitle(...args: any[]): any;
-  /* typeEncoding=v32@0:8{?=iiii}16 */
-  setBounds(...args: any[]): any;
-  /* typeEncoding=v24@0:8^{CGColor=}16 */
-  setColor(...args: any[]): any;
-  /* typeEncoding=v20@0:8c16 */
-  setIsFlowHome(...args: any[]): any;
-  /* typeEncoding=v20@0:8c16 */
-  setIsSymbolMaster(...args: any[]): any;
-  /* typeEncoding=v24@0:8d16 */
-  setTitleCompression(...args: any[]): any;
-  /* typeEncoding=d16@0:8 */
-  titleCompression(...args: any[]): any;
-}
-
-declare class MSArtboardTitleRenderer extends NSObject {
-  /* typeEncoding=d, ivar=_backingScaleFactor, attributes=(assign,nonatomic) */
-  backingScaleFactor(): number;
-  /* typeEncoding=^{CGContext=}, ivar=_context, attributes=(assign,nonatomic) */
-  context(): any;
-  /* typeEncoding=@"<MSGPURenderer>", ivar=_renderer, attributes=(assign,nonatomic,readonly,weak) */
-  renderer(): MSGPURenderer;
-  /* typeEncoding=@"<MSGPUTexture>", ivar=_texture, attributes=(retain,nonatomic) */
-  texture(): MSGPUTexture;
-  /* typeEncoding=^v, ivar=_textureBytes, attributes=(assign,nonatomic) */
-  textureBytes(): any;
-  /* typeEncoding=@"NSFont", ivar=_titleFont, attributes=(assign,nonatomic,readonly) */
-  titleFont(): NSFont;
-  /* typeEncoding=@"NSMutableDictionary", ivar=_titleMap, attributes=(assign,nonatomic,readonly) */
-  titleMap(): NSMutableDictionary;
-
-  /* typeEncoding=v16@0:8 */
-  _cxx_destruct(): void;
-  /* typeEncoding=d16@0:8 */
-  backingScaleFactor(...args: any[]): any;
-  /* typeEncoding=^{CGContext=}16@0:8 */
-  context(...args: any[]): any;
-  /* typeEncoding=v16@0:8 */
-  dealloc(): void;
-  /* typeEncoding=v72@0:8@16^{CGColor=}24^{CGColor=}32d40d48{CGPoint=dd}56 */
-  drawTitlesForArtboards_titleColor_symbolTitleColor_zoom_backingScaleFactor_baseOrigin(
-    ...args: any[]
-  ): any;
-  /* typeEncoding=@24@0:8@16 */
-  initWithGPURenderer(...args: any[]): any;
-  /* typeEncoding=@40@0:8@16d24d32 */
-  ms_collectArtboardsForTitleRendering_zoom_backingScaleFactor(
-    ...args: any[]
-  ): any;
-  /* typeEncoding=v56@0:8@16d24d32@40@48 */
-  ms_createTextureForArtboards_zoom_backingScaleFactor_titleColor_symbolTitleColor(
-    ...args: any[]
-  ): any;
-  /* typeEncoding=v56@0:8@16d24d32{CGPoint=dd}40 */
-  ms_drawTitles_zoom_backingScaleFactor_baseOrigin(...args: any[]): any;
-  /* typeEncoding=v32@0:8@16d24 */
-  ms_drawTitlesToTexture_backingScaleFactor(...args: any[]): any;
-  /* typeEncoding=@24@0:8@16 */
-  ms_findExistingItemForArtboard(...args: any[]): any;
-  /* typeEncoding=v32@0:8@16@24 */
-  ms_insertTitleItem_name(...args: any[]): any;
-  /* typeEncoding=c40@0:8@16d24d32 */
-  ms_needsToRecreateTitlesForArtboards_zoom_backingScaleFactor(
-    ...args: any[]
-  ): any;
-  /* typeEncoding=v32@0:8Q16Q24 */
-  ms_recreateTextureForWidth_height(...args: any[]): any;
-  /* typeEncoding=v16@0:8 */
-  ms_uploadTextureData(): void;
-  /* typeEncoding=@16@0:8 */
-  renderer(...args: any[]): any;
-  /* typeEncoding=v24@0:8d16 */
-  setBackingScaleFactor(...args: any[]): any;
-  /* typeEncoding=v24@0:8^{CGContext=}16 */
-  setContext(...args: any[]): any;
-  /* typeEncoding=v24@0:8@16 */
-  setTexture(...args: any[]): any;
-  /* typeEncoding=v24@0:8^v16 */
-  setTextureBytes(...args: any[]): any;
-  /* typeEncoding=@16@0:8 */
-  texture(...args: any[]): any;
-  /* typeEncoding=^v16@0:8 */
-  textureBytes(...args: any[]): any;
-  /* typeEncoding=@16@0:8 */
-  titleFont(...args: any[]): any;
-  /* typeEncoding=@16@0:8 */
-  titleMap(...args: any[]): any;
-}
 
 declare class MSAssetCollection extends _MSAssetCollection {
   /* typeEncoding=v24@0:8@16 */

@@ -1,4 +1,4 @@
-import { NSFont } from "@/AppKit/NSFont";
+/// <reference path="../AppKit/NSFont.d.ts" />
 
 declare class MSArtboardBackgroundColorInspectorItem extends MSInspectorItem /* implements MSColorInspectorDelegate, BCPopoverDelegate, MSStylePartPreviewButtonDelegate, MSStylePartPreviewButtonDisabledTarget */ {
   /* typeEncoding=@"MSStylePartPreviewButton", ivar=_backgroundColorButton, attributes=(retain,nonatomic) */
@@ -789,6 +789,9 @@ declare class MSArtboardPresetsTableView extends NSTableView {
   menuForEvent(...args: any[]): any;
 }
 
+declare class MSArtboardPresetsViewControllerDelegate {
+}
+
 declare class MSArtboardPresetsViewController extends NSViewController /* implements NSTableViewDataSource, NSTableViewDelegate, MSEditArtboardPresetViewControllerDelegate, NSUserInterfaceValidations, BCPopoverDelegate */ {
   /* typeEncoding=@"NSArray", ivar=_arrangedObjects, attributes=(assign,nonatomic,readonly) */
   arrangedObjects(): NSArray;
@@ -1102,3 +1105,4 @@ declare class MSArtboardTitleRenderer extends NSObject {
   /* typeEncoding=@16@0:8 */
   titleMap(...args: any[]): any;
 }
+

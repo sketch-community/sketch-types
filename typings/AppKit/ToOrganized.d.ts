@@ -1,3 +1,4 @@
+
 declare const NSUTF8StringEncoding: number;
 
 declare const NSTitledWindowMask: number;
@@ -7,7 +8,6 @@ declare const NSBackingStoreBuffered: number;
 declare const NSLayoutAttributeHeight: number;
 declare const NSLayoutRelationEqual: number;
 declare const NSLayoutAttributeTop: any;
-declare const NSPasteboardTypeString: unique symbol;
 
 declare function NSClassFromString(name: string): any;
 declare function NSMakeRect(x: number, y: number, w: number, h: number): NSRect;

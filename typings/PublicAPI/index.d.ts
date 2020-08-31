@@ -1,6 +1,5 @@
-/// <reference path="./InternalAPI.d.ts" />
-
 declare module 'sketch/dom' {
+  /// <reference path="../AppKit/NSFont.d.ts" />
   class dom {
     /**
      * Export an object, using the options supplied.
@@ -298,7 +297,7 @@ declare module 'sketch/dom' {
 
     export abstract class Layer<
       NativeType extends MSLayer = MSLayer
-      > extends Component<NativeType> {
+    > extends Component<NativeType> {
       /**
        * The unique ID of the Layer. (not to be confused with symbolId on SymbolInstances)
        */
@@ -398,7 +397,7 @@ declare module 'sketch/dom' {
 
     class StyledLayer<NativeType extends MSStyledLayer> extends Layer<
       NativeType
-      > {
+    > {
       /**
        * The style of the layer.
        */
@@ -458,7 +457,7 @@ declare module 'sketch/dom' {
 
     class BaseGroup<
       NativeType extends MSLayerGroup = MSLayerGroup
-      > extends StyledLayer<NativeType> {
+    > extends StyledLayer<NativeType> {
       /**
        * The layers that this component groups together.
        */
@@ -535,7 +534,7 @@ declare module 'sketch/dom' {
 
     class BaseArtboard<
       NativeType extends MSArtboardGroup = MSArtboardGroup
-      > extends BaseGroup<MSArtboardGroup> {
+    > extends BaseGroup<MSArtboardGroup> {
       /**
        * The page the Artboard is in.
        */
