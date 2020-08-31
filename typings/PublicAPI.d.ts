@@ -1641,7 +1641,7 @@ declare module 'sketch/dom' {
       /**
        * The type of the fill.
        */
-      fill: Style.FillType;
+      fillType: Style.FillType;
       /**
        * A rgba hex-string (#000000ff is opaque black).
        */
@@ -1675,7 +1675,7 @@ declare module 'sketch/dom' {
       /**
        * The type of the fill of the border.
        */
-      fill: Style.FillType;
+      fillType: Style.FillType;
       /**
        * A rgba hex-string (#000000ff is opaque black).
        */
