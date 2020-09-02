@@ -949,7 +949,7 @@ declare module 'sketch/dom' {
         /**
          * Fully-justified. The last line in a paragraph is natural-aligned.
          */
-        justify = 'justify',
+        justified = 'justified',
         /**
          * Indicates the default alignment for script
          */
