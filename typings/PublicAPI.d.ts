@@ -1278,6 +1278,30 @@ declare module 'sketch/dom' {
       static fromLayer(layer: Layer): HotSpot;
     }
 
+    export namespace Library {
+      /**
+       * Enumeration of the types of Library.
+       */
+      export enum ImportableObjectType {
+        Symbol = 'Symbol',
+        LayerStyle = 'LayerStyle',
+        TextStyle = 'TextStyle',
+        Unknown = 'Unknown'
+      }
+      /**
+       * Enumeration of the types of Importable Objects.
+       */
+      export enum LibraryType {
+        Internal = 'Internal',
+        User = 'LocalUser',
+        Remote = 'RemoteUser',
+        LocalUser = 'LocalUser',
+        RemoteUser = 'RemoteUser',
+        RemoteTeam = 'RemoteTeam',
+        RemoteThirdParty = 'RemoteThirdParty',
+      }
+    }
+
     /**
      * A Sketch Library.
      */
@@ -1302,7 +1326,7 @@ declare module 'sketch/dom' {
       /**
        * The type of Library.
        */
-      readonly libraryType: LibraryType;
+      readonly libraryType: Library.LibraryType;
       /**
        * The date at which the library was last updated
        */
@@ -1340,7 +1364,7 @@ declare module 'sketch/dom' {
 
       getImportableReferencesForDocument(
         document: Document,
-        objectType: ImportableObjectType
+        objectType: Library.ImportableObjectType
       ): ImportableObject[];
 
       /**
@@ -1369,15 +1393,6 @@ declare module 'sketch/dom' {
       getImportableTextStyleReferencesForDocument(
         document: Document
       ): ImportableObject[];
-
-      /**
-       * Enumeration of the types of Library.
-       */
-      static LibraryType: typeof LibraryType;
-      /**
-       * Enumeration of the types of Importable Objects.
-       */
-      static ImportableObjectType: typeof ImportableObjectType;
     }
 
     type ImportableNative =
@@ -1403,7 +1418,7 @@ declare module 'sketch/dom' {
       /**
        * The type of the Object.
        */
-      readonly objectType: ImportableObjectType;
+      readonly objectType: Library.ImportableObjectType;
       /**
        * The Library the Object is part of.
        */
@@ -1414,18 +1429,6 @@ declare module 'sketch/dom' {
        * @return If the objectType of the Object is Symbol, it will return a Symbol Master which will be linked to the Library (meaning that if the Library is updated, the Symbol Instances created from the Master will be updated as well).
        */
       import(): SymbolMaster;
-    }
-
-    enum ImportableObjectType {
-      Symbol,
-      LayerStyle,
-      TextStyle,
-    }
-
-    enum LibraryType {
-      Internal,
-      User,
-      Remote,
     }
 
     /**
