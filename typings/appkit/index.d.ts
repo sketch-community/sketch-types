@@ -179,7 +179,7 @@ declare class NSGraphicsContext {}
 declare class NSHashTable {}
 declare class NSImage {
   static alloc(): NSImage;
-  initWithData(imgData:any): this;
+  initWithData(imgData: any): this;
 }
 declare class NSImageCell {}
 declare class NSImageView {}
