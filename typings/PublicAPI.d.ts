@@ -1682,7 +1682,7 @@ declare module 'sketch/dom' {
      * Image Fill Style
      */
     export interface Pattern {
-      patternType: 'Fill';
+      patternType: Style.PatternFillType;
       tileScale: number;
       image: ImageData;
     }
@@ -2040,6 +2040,13 @@ declare module 'sketch/dom' {
          * This effect allows you to create gradients that sweep around the circumference (measured by the maximum width or height of a layer) in a clockwise direction.
          */
         Angular = 'Angular',
+      }
+
+      export enum PatternFillType {
+        Tile = 'Tile',
+        Fill = 'Fill',
+        Stretch = 'Stretch',
+        Fit = 'Fit',
       }
     }
 
