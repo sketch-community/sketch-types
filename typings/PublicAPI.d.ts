@@ -115,6 +115,11 @@ declare module 'sketch/dom' {
          */
         SaveTo = 2
       }
+      export enum ColorSpace {
+        Unmanaged = 'Unmanaged',
+        sRGB = 'sRGB',
+        P3 = 'P3',
+      }
     }
 
     export class Document extends Component<MSDocument> {
@@ -257,6 +262,11 @@ declare module 'sketch/dom' {
        * A method to close a document.
        */
       close(): void;
+
+      /**
+       * The color-space of the document
+       */
+      colorSpace: Document.ColorSpace;
     }
 
     /**
