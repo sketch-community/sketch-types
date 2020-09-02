@@ -1739,7 +1739,7 @@ declare module 'sketch/dom' {
       /**
        * The type of the border joins (if any).
        */
-      lineJoin?: Style.LineJoin;
+      lineJoin?: Style.LineJoin.Bevel | Style.LineJoin.Round | 'Miter';
     }
 
     /**
