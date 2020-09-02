@@ -1,4 +1,5 @@
 /// <reference path="./InternalAPI.d.ts" />
+/// <reference path="./IIOArray.ts" />
 
 declare module 'sketch/dom' {
   class dom {
@@ -85,6 +86,7 @@ declare module 'sketch/dom' {
       SymbolInstance = 'SymbolInstance',
       SymbolMaster = 'SymbolMaster',
       Text = 'Text',
+      ColorAsset = 'ColorAsset',
     }
 
     export type ShapeType = Shape | ShapePath;
@@ -241,6 +243,13 @@ declare module 'sketch/dom' {
        * A method to close a document.
        */
       close(): void;
+
+      /**
+       * A list of color assets defined in the document.
+       *
+       * Mutating the returned array will update the document colors.
+       */
+      colors: IIOArray<ColorAsset, IColorAsset>;
     }
 
     enum SaveMode {
@@ -1261,6 +1270,18 @@ declare module 'sketch/dom' {
       constructor(properties?: HotSpotProperties);
 
       static fromLayer(layer: Layer): HotSpot;
+    }
+
+    export interface IColorAsset {
+      type?: Types.ColorAsset;
+      name?: string;
+      color: string;
+    }
+
+    class ColorAsset implements IColorAsset {
+      type: Types.ColorAsset;
+      name: string | null;
+      color: string;
     }
 
     /**
