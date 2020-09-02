@@ -2115,6 +2115,7 @@ declare module 'sketch/dom' {
       enum StyleType {
         Layer = 'Layer',
         Text = 'Text',
+        Unknown = 'Unknown',
       }
     }
 
