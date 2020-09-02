@@ -100,6 +100,23 @@ declare module 'sketch/dom' {
      */
     export function getDocuments(): Document[];
 
+    namespace Document {
+      export enum SaveMode {
+        /**
+         * Overwrites a document’s file with the document’s contents
+         */
+        Save = 0,
+        /**
+         *  Writes a document’s contents to a new file and then changes the document’s current location to point to the just-written file
+         */
+        SaveAs = 1,
+        /**
+         * Writes a document’s contents to a new file without changing the document’s current location to point to the new file.
+         */
+        SaveTo = 2
+      }
+    }
+
     export class Document extends Component<MSDocument> {
       /**
        * Access the selected Document
@@ -130,7 +147,6 @@ declare module 'sketch/dom' {
         cb: (err: any, document?: Document | undefined) => void
       ): void;
 
-      static SaveMode: typeof SaveMode;
       /**
        * The unique ID of the document.
        */
@@ -220,7 +236,7 @@ declare module 'sketch/dom' {
       save(
         path?: string,
         options?: {
-          saveMode: SaveMode;
+          saveMode: Document.SaveMode;
           iKnowThatImOverwritingAFolder?: boolean;
         },
         cb?: (err: any) => void
@@ -241,21 +257,6 @@ declare module 'sketch/dom' {
        * A method to close a document.
        */
       close(): void;
-    }
-
-    enum SaveMode {
-      /**
-       * Overwrites a document’s file with the document’s contents
-       */
-      Save,
-      /**
-       *  Writes a document’s contents to a new file and then changes the document’s current location to point to the just-written file
-       */
-      SaveAs,
-      /**
-       * Writes a document’s contents to a new file without changing the document’s current location to point to the new file.
-       */
-      SaveTo,
     }
 
     /**
