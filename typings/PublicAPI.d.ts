@@ -789,7 +789,7 @@ declare module 'sketch/dom' {
     /**
      * A utility class to represent a curve point (with handles to control the curve in a path).
      */
-    export class CurvePoint extends Component<MSCurvePoint> {
+    class CurvePoint extends Component<MSCurvePoint> {
       /**
        * The position of the point.
        */
@@ -812,14 +812,8 @@ declare module 'sketch/dom' {
       pointType: CurvePoint.PointType;
     }
 
-    export namespace CurvePoint {
-      export enum PointType {
-        Undefined,
-        Straight,
-        Mirrored,
-        Asymmetric,
-        Disconnected,
-      }
+    namespace CurvePoint {
+      type PointType = ShapePath.PointType
     }
 
     /**
