@@ -2277,6 +2277,7 @@ declare module 'sketch/ui' {
     export enum INPUT_TYPE {
       string = 'string',
       selection = 'selection',
+      slider = 'slider'
     }
 
     export interface StringInputOptions<T extends string | number> {
