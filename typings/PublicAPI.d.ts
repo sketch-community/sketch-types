@@ -1223,23 +1223,23 @@ declare module 'sketch/dom' {
         /**
          * No animation
          */
-        none,
+        none = 'none',
         /**
          * Slide from the left
          */
-        slideFromLeft,
+        slideFromLeft = 'slideFromLeft',
         /**
          * Slide from the right
          */
-        slideFromRight,
+        slideFromRight = 'slideFromRight',
         /**
          * Slide from the bottom
          */
-        slideFromBottom,
+        slideFromBottom = 'slideFromBottom',
         /**
          * Slide from the top
          */
-        slideFromTop,
+        slideFromTop = 'slideFromTop',
       }
 
       /**
