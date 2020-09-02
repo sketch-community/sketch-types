@@ -770,12 +770,19 @@ declare module 'sketch/dom' {
 
     export namespace ShapePath {
       export enum ShapeType {
-        Rectangle,
-        Oval,
-        Triangle,
-        Polygon,
-        Star,
-        Custom,
+        Rectangle = 'Rectangle',
+        Oval = 'Oval',
+        Triangle = 'Triangle',
+        Polygon = 'Polygon',
+        Star = 'Star',
+        Custom = 'Custom',
+      }
+      export enum PointType {
+        Undefined = 'Undefined',
+        Straight = 'Straight',
+        Mirrored = 'Mirrored',
+        Asymmetric = 'Asymmetric',
+        Disconnected = 'Disconnected',
       }
     }
 
