@@ -714,7 +714,7 @@ declare module 'sketch/dom' {
       /**
        * The points defining the Shape Path.
        */
-      points?: CurvePoint[];
+      points?: ICurvePoint[];
       /**
        * The type of the Shape Path. It can only be set when creating a new ShapePath.
        */
@@ -768,6 +768,14 @@ declare module 'sketch/dom' {
       }
     }
 
+    export interface ICurvePoint {
+      point: IPoint
+      curveFrom: IPoint
+      curveTo: IPoint
+      cornerRadius: number
+      pointType: CurvePoint.PointType
+    }
+
     /**
      * A utility class to represent a curve point (with handles to control the curve in a path).
      */
@@ -804,10 +812,15 @@ declare module 'sketch/dom' {
       }
     }
 
+    export interface IPoint {
+      x: number
+      y: number
+    }
+
     /**
      * A utility class to represent a point.
      */
-    export class Point {
+    export class Point implements IPoint {
       /**
        * The x coordinate of the point.
        */
