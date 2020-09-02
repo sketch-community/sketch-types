@@ -980,6 +980,9 @@ declare module 'sketch/dom' {
          * Uses MSConstantBaselineTypesetter for fixed line height
          */
         variable = 'variable',
+
+        // Undocumented
+        natural = 'natural'
       }
     }
 
