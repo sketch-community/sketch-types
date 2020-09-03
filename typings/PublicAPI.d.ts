@@ -135,6 +135,11 @@ declare module 'sketch/dom' {
        * The unique ID of the document.
        */
       id: string;
+
+      /**
+       * The path to the document (or the appcast URL in case of a Document from a remote Library).
+       */
+      path: string;
       /**
        * The pages of the document.
        */
