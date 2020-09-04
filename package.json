@@ -11,7 +11,7 @@
   },
   "license": "MIT",
   "author": "Arvin Xu <arvinx@foxmail.com> (https://www.arvinx.com)",
-  "typings": "typings",
+  "types": "./typings/index.d.ts",
   "files": [
     "typings"
   ],
