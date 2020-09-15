@@ -483,6 +483,14 @@ declare module 'sketch/dom' {
 
     export class Group extends BaseGroup {
       type: Types.Group;
+      /**
+       * The ID of the SharedStyle or null, identical to sharedStyle.id.
+       */
+      sharedStyleId: string | null;
+      /**
+       * The associated shared style.
+       */
+      sharedStyle: SharedStyle | null;
 
       constructor(properties?: GroupProperties);
     }
@@ -633,6 +641,14 @@ declare module 'sketch/dom' {
        * The actual image of the layer.
        */
       image: ImageData;
+      /**
+       * The ID of the SharedStyle or null, identical to sharedStyle.id.
+       */
+      sharedStyleId: string | null;
+      /**
+       * The associated shared style.
+       */
+      sharedStyle: SharedStyle | null;
 
       constructor(properties?: ImageProperties);
     }
@@ -697,6 +713,14 @@ declare module 'sketch/dom' {
        * The group the Shape is in.
        */
       parent: Group;
+      /**
+       * The ID of the SharedStyle or null, identical to sharedStyle.id.
+       */
+      sharedStyleId: string | null;
+      /**
+       * The associated shared style.
+       */
+      sharedStyle: SharedStyle | null;
 
       constructor(properties?: ShapeProperties);
     }
@@ -754,6 +778,14 @@ declare module 'sketch/dom' {
        * If the Path is closed.
        */
       closed: boolean;
+      /**
+       * The ID of the SharedStyle or null, identical to sharedStyle.id.
+       */
+      sharedStyleId: string | null;
+      /**
+       * The associated shared style.
+       */
+      sharedStyle: SharedStyle | null;
 
       constructor(properties?: ShapePathProperties);
 
@@ -906,6 +938,14 @@ declare module 'sketch/dom' {
        * Whether the layer should have a fixed width or a flexible width.
        */
       fixedWidth: boolean;
+      /**
+       * The ID of the SharedStyle or null, identical to sharedStyle.id.
+       */
+      sharedStyleId: string | null;
+      /**
+       * The associated shared style.
+       */
+      sharedStyle: SharedStyle | null;
 
       constructor(properties?: TextProperties);
 
