@@ -100,6 +100,28 @@ declare module 'sketch/dom' {
      */
     export function getDocuments(): Document[];
 
+    namespace Document {
+      export enum SaveMode {
+        /**
+         * Overwrites a document’s file with the document’s contents
+         */
+        Save = 0,
+        /**
+         *  Writes a document’s contents to a new file and then changes the document’s current location to point to the just-written file
+         */
+        SaveAs = 1,
+        /**
+         * Writes a document’s contents to a new file without changing the document’s current location to point to the new file.
+         */
+        SaveTo = 2
+      }
+      export enum ColorSpace {
+        Unmanaged = 'Unmanaged',
+        sRGB = 'sRGB',
+        P3 = 'P3',
+      }
+    }
+
     export class Document extends Component<MSDocument> {
       /**
        * Access the selected Document
@@ -130,7 +152,6 @@ declare module 'sketch/dom' {
         cb: (err: any, document?: Document | undefined) => void
       ): void;
 
-      static SaveMode: typeof SaveMode;
       /**
        * The unique ID of the document.
        */
@@ -220,7 +241,7 @@ declare module 'sketch/dom' {
       save(
         path?: string,
         options?: {
-          saveMode: SaveMode;
+          saveMode: Document.SaveMode;
           iKnowThatImOverwritingAFolder?: boolean;
         },
         cb?: (err: any) => void
@@ -241,21 +262,11 @@ declare module 'sketch/dom' {
        * A method to close a document.
        */
       close(): void;
-    }
 
-    enum SaveMode {
       /**
-       * Overwrites a document’s file with the document’s contents
+       * The color-space of the document
        */
-      Save,
-      /**
-       *  Writes a document’s contents to a new file and then changes the document’s current location to point to the just-written file
-       */
-      SaveAs,
-      /**
-       * Writes a document’s contents to a new file without changing the document’s current location to point to the new file.
-       */
-      SaveTo,
+      colorSpace: Document.ColorSpace;
     }
 
     /**
@@ -759,19 +770,26 @@ declare module 'sketch/dom' {
 
     export namespace ShapePath {
       export enum ShapeType {
-        Rectangle,
-        Oval,
-        Triangle,
-        Polygon,
-        Star,
-        Custom,
+        Rectangle = 'Rectangle',
+        Oval = 'Oval',
+        Triangle = 'Triangle',
+        Polygon = 'Polygon',
+        Star = 'Star',
+        Custom = 'Custom',
+      }
+      export enum PointType {
+        Undefined = 'Undefined',
+        Straight = 'Straight',
+        Mirrored = 'Mirrored',
+        Asymmetric = 'Asymmetric',
+        Disconnected = 'Disconnected',
       }
     }
 
     /**
      * A utility class to represent a curve point (with handles to control the curve in a path).
      */
-    export class CurvePoint extends Component<MSCurvePoint> {
+    class CurvePoint extends Component<MSCurvePoint> {
       /**
        * The position of the point.
        */
@@ -794,14 +812,8 @@ declare module 'sketch/dom' {
       pointType: CurvePoint.PointType;
     }
 
-    export namespace CurvePoint {
-      export enum PointType {
-        Undefined,
-        Straight,
-        Mirrored,
-        Asymmetric,
-        Disconnected,
-      }
+    namespace CurvePoint {
+      type PointType = ShapePath.PointType
     }
 
     /**
@@ -937,7 +949,7 @@ declare module 'sketch/dom' {
         /**
          * Fully-justified. The last line in a paragraph is natural-aligned.
          */
-        justify = 'justify',
+        justified = 'justified',
         /**
          * Indicates the default alignment for script
          */
@@ -968,6 +980,9 @@ declare module 'sketch/dom' {
          * Uses MSConstantBaselineTypesetter for fixed line height
          */
         variable = 'variable',
+
+        // Undocumented
+        natural = 'natural'
       }
     }
 
@@ -1208,23 +1223,23 @@ declare module 'sketch/dom' {
         /**
          * No animation
          */
-        none,
+        none = 'none',
         /**
          * Slide from the left
          */
-        slideFromLeft,
+        slideFromLeft = 'slideFromLeft',
         /**
          * Slide from the right
          */
-        slideFromRight,
+        slideFromRight = 'slideFromRight',
         /**
          * Slide from the bottom
          */
-        slideFromBottom,
+        slideFromBottom = 'slideFromBottom',
         /**
          * Slide from the top
          */
-        slideFromTop,
+        slideFromTop = 'slideFromTop',
       }
 
       /**
@@ -1263,6 +1278,30 @@ declare module 'sketch/dom' {
       static fromLayer(layer: Layer): HotSpot;
     }
 
+    export namespace Library {
+      /**
+       * Enumeration of the types of Library.
+       */
+      export enum ImportableObjectType {
+        Symbol = 'Symbol',
+        LayerStyle = 'LayerStyle',
+        TextStyle = 'TextStyle',
+        Unknown = 'Unknown'
+      }
+      /**
+       * Enumeration of the types of Importable Objects.
+       */
+      export enum LibraryType {
+        Internal = 'Internal',
+        User = 'LocalUser',
+        Remote = 'RemoteUser',
+        LocalUser = 'LocalUser',
+        RemoteUser = 'RemoteUser',
+        RemoteTeam = 'RemoteTeam',
+        RemoteThirdParty = 'RemoteThirdParty',
+      }
+    }
+
     /**
      * A Sketch Library.
      */
@@ -1287,7 +1326,7 @@ declare module 'sketch/dom' {
       /**
        * The type of Library.
        */
-      readonly libraryType: LibraryType;
+      readonly libraryType: Library.LibraryType;
       /**
        * The date at which the library was last updated
        */
@@ -1325,7 +1364,7 @@ declare module 'sketch/dom' {
 
       getImportableReferencesForDocument(
         document: Document,
-        objectType: ImportableObjectType
+        objectType: Library.ImportableObjectType
       ): ImportableObject[];
 
       /**
@@ -1354,15 +1393,6 @@ declare module 'sketch/dom' {
       getImportableTextStyleReferencesForDocument(
         document: Document
       ): ImportableObject[];
-
-      /**
-       * Enumeration of the types of Library.
-       */
-      static LibraryType: typeof LibraryType;
-      /**
-       * Enumeration of the types of Importable Objects.
-       */
-      static ImportableObjectType: typeof ImportableObjectType;
     }
 
     type ImportableNative =
@@ -1388,7 +1418,7 @@ declare module 'sketch/dom' {
       /**
        * The type of the Object.
        */
-      readonly objectType: ImportableObjectType;
+      readonly objectType: Library.ImportableObjectType;
       /**
        * The Library the Object is part of.
        */
@@ -1399,18 +1429,6 @@ declare module 'sketch/dom' {
        * @return If the objectType of the Object is Symbol, it will return a Symbol Master which will be linked to the Library (meaning that if the Library is updated, the Symbol Instances created from the Master will be updated as well).
        */
       import(): SymbolMaster;
-    }
-
-    enum ImportableObjectType {
-      Symbol,
-      LayerStyle,
-      TextStyle,
-    }
-
-    enum LibraryType {
-      Internal,
-      User,
-      Remote,
     }
 
     /**
@@ -1664,7 +1682,7 @@ declare module 'sketch/dom' {
      * Image Fill Style
      */
     export interface Pattern {
-      patternType: 'Fill';
+      patternType: Style.PatternFillType;
       tileScale: number;
       image: ImageData;
     }
@@ -1705,11 +1723,11 @@ declare module 'sketch/dom' {
       /**
        * The type of the arrow head for the start of the path.
        */
-      startArrowhead?: Style.Arrowheads;
+      startArrowhead?: Style.Arrowhead;
       /**
        * The type of the arrow head for the start of the path.
        */
-      endArrowhead?: Style.Arrowheads;
+      endArrowhead?: Style.Arrowhead;
       /**
        * The dash pattern of the borders. For example, a dash pattern of 4-2 will draw the stroke for four pixels, put a two pixel gap, draw four more pixels and then so on. A dashed pattern of 5-4-3-2 will draw a stroke of 5 px, a gap of 4 px, then a stroke of 3 px, a gap of 2 px, and then repeat.
        */
@@ -1721,7 +1739,7 @@ declare module 'sketch/dom' {
       /**
        * The type of the border joins (if any).
        */
-      lineJoin?: Style.LineJoin;
+      lineJoin?: Style.LineJoin.Bevel | Style.LineJoin.Round | 'Miter';
     }
 
     /**
@@ -1914,110 +1932,121 @@ declare module 'sketch/dom' {
 
     export namespace Style {
       export enum BlendingMode {
-        Normal,
-        Darken,
-        Multiply,
-        ColorBurn,
-        Lighten,
-        Screen,
-        ColorDodge,
-        Overlay,
-        SoftLight,
-        HardLight,
-        Difference,
-        Exclusion,
-        Hue,
-        Saturation,
-        Color,
-        Luminosity,
+        Normal = 'Normal',
+        Darken = 'Darken',
+        Multiply = 'Multiply',
+        ColorBurn = 'ColorBurn',
+        Lighten = 'Lighten',
+        Screen = 'Screen',
+        ColorDodge = 'ColorDodge',
+        Overlay = 'Overlay',
+        SoftLight = 'SoftLight',
+        HardLight = 'HardLight',
+        Difference = 'Difference',
+        Exclusion = 'Exclusion',
+        Hue = 'Hue',
+        Saturation = 'Saturation',
+        Color = 'Color',
+        Luminosity = 'Luminosity',
       }
 
       export enum BlurType {
         /**
          * A common blur type that will accurately blur in all directions.
          */
-        Gaussian,
+        Gaussian = 'Gaussian',
         /**
          * Blur only in one direction, giving the illusion of motion.
          */
-        Motion,
+        Motion = 'Motion',
         /**
          * Will blur from one particular point out.
          */
-        Zoom,
+        Zoom = 'Zoom',
         /**
          * This will blur any content that appears behind the layer.
          */
-        Background,
+        Background = 'Background',
       }
 
       export enum FillType {
-        Color,
-        Gradient,
-        Pattern,
-        Noise,
+        Color = 'Color',
+        Gradient = 'Gradient',
+        Pattern = 'Pattern',
+        color = 'Color',
+        gradient = 'Gradient',
+        pattern = 'Pattern',
       }
 
       export enum BorderPosition {
-        Center,
-        Inside,
-        Outside,
+        Center = 'Center',
+        Inside = 'Inside',
+        Outside = 'Outside',
+        Both = 'Both',
       }
 
-      export enum Arrowheads {
-        None,
-        OpenArrow,
-        FilledArrow,
-        Line,
-        OpenCircle,
-        FilledCircle,
-        OpenSquare,
-        FilledSquare,
+      export enum Arrowhead {
+        None = 'None',
+        OpenArrow = 'OpenArrow',
+        FilledArrow = 'FilledArrow',
+        Line = 'Line',
+        OpenCircle = 'OpenCircle',
+        FilledCircle = 'FilledCircle',
+        OpenSquare = 'OpenSquare',
+        FilledSquare = 'FilledSquare',
+        ClosedArrow = 'FilledArrow',
       }
 
       export enum LineEnd {
         /**
          * This is the default option that’ll draw the border right to the vector point.
          */
-        Butt,
+        Butt = 'Butt',
         /**
          * Creates a rounded, semi-circular end to a path that extends past the vector point.
          */
-        Round,
+        Round = 'Round',
         /**
          * Similar to the rounded cap, but with a straight edges.
          */
-        Projecting,
+        Projecting = 'Projecting',
       }
 
       export enum LineJoin {
         /**
          * This will simply create an angled, or pointy join. The default setting.
          */
-        Miter,
+        Miter = 'Mitter',
         /**
          * Creates a rounded corner for the border. The radius is relative to the border thickness.
          */
-        Round,
+        Round = 'Round',
         /**
          * This will create a chamfered edge on the border corner.
          */
-        Bevel,
+        Bevel = 'Bevel',
       }
 
       export enum GradientType {
         /**
          * Linear gradients tend to be the most common, where two colors will appear at opposite points of an object and will blend, or transition into each other.
          */
-        Linear,
+        Linear = 'Linear',
         /**
          * A radial gradient will create an effect where the transition between color stops will be in a circular pattern.
          */
-        Radial,
+        Radial = 'Radial',
         /**
          * This effect allows you to create gradients that sweep around the circumference (measured by the maximum width or height of a layer) in a clockwise direction.
          */
-        Angular,
+        Angular = 'Angular',
+      }
+
+      export enum PatternFillType {
+        Tile = 'Tile',
+        Fill = 'Fill',
+        Stretch = 'Stretch',
+        Fit = 'Fit',
       }
     }
 
@@ -2086,6 +2115,7 @@ declare module 'sketch/dom' {
       enum StyleType {
         Layer = 'Layer',
         Text = 'Text',
+        Unknown = 'Unknown',
       }
     }
 
@@ -2255,6 +2285,7 @@ declare module 'sketch/ui' {
     export enum INPUT_TYPE {
       string = 'string',
       selection = 'selection',
+      slider = 'slider'
     }
 
     export interface StringInputOptions<T extends string | number> {
