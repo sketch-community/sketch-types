@@ -2181,9 +2181,10 @@ declare module 'sketch/dom' {
 
     export interface ExportOptions {
       /**
-       * this is the path of the folder where all exported files are placed (defaults to "~/Documents/Sketch Exports").
+       * This is the path of the folder where all exported files are placed (defaults to "~/Documents/Sketch Exports").
+       * If falsey, the data for the objects are returned immediately.
        */
-      output?: string;
+      output: string | false | null | 0;
       /**
        * Comma separated list of formats to export to (png, jpg, svg, json or pdf) (default to "png").
        */
