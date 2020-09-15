@@ -1928,6 +1928,11 @@ declare module 'sketch/dom' {
        * The style instance will be updated with the value of the Shared Style.
        */
       syncWithSharedStyle(): void;
+
+      /**
+       * @return A number if the layer is a Text layer or undefined.
+       */
+      getDefaultLineHeight(): number | undefined;
     }
 
     export namespace Style {
