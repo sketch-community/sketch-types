@@ -1,6 +1,6 @@
 {
   "name": "sketch-typings",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Community built set of typescript declarations for writing Sketch plugins.",
   "main": "index.js",
   "repository": {
@@ -29,7 +29,7 @@
     "url": "https://github.com/arvinxx/sketch-typings/issues"
   },
   "publishConfig": {
-  "registry": "https://registry.npmjs.org"
-},
+    "registry": "https://registry.npmjs.org"
+  },
   "homepage": "https://github.com/arvinxx/sketch-typings#readme"
 }
