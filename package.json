@@ -7,7 +7,10 @@
     "url": "git+https://github.com/arvinxx/sketch-typings.git"
   },
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "test": "npm run lint",
+    "prettier": "prettier **/*.ts",
+    "lint": "npm run prettier -- -c"
   },
   "license": "MIT",
   "author": "Arvin Xu <arvinx@foxmail.com> (https://www.arvinx.com)",
