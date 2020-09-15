@@ -28,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/arvinxx/sketch-typings/issues"
   },
+  "publishConfig": {
+  "registry": "https://registry.npmjs.org"
+},
   "homepage": "https://github.com/arvinxx/sketch-typings#readme"
 }
