@@ -113,7 +113,7 @@ declare module 'sketch/dom' {
         /**
          * Writes a document’s contents to a new file without changing the document’s current location to point to the new file.
          */
-        SaveTo = 2
+        SaveTo = 2,
       }
       export enum ColorSpace {
         Unmanaged = 'Unmanaged',
@@ -824,11 +824,11 @@ declare module 'sketch/dom' {
     }
 
     export interface ICurvePoint {
-      point: IPoint
-      curveFrom: IPoint
-      curveTo: IPoint
-      cornerRadius: number
-      pointType: CurvePoint.PointType
+      point: IPoint;
+      curveFrom: IPoint;
+      curveTo: IPoint;
+      cornerRadius: number;
+      pointType: CurvePoint.PointType;
     }
 
     /**
@@ -858,12 +858,12 @@ declare module 'sketch/dom' {
     }
 
     namespace CurvePoint {
-      type PointType = ShapePath.PointType
+      type PointType = ShapePath.PointType;
     }
 
     export interface IPoint {
-      x: number
-      y: number
+      x: number;
+      y: number;
     }
 
     /**
@@ -1040,7 +1040,7 @@ declare module 'sketch/dom' {
         variable = 'variable',
 
         // Undocumented
-        natural = 'natural'
+        natural = 'natural',
       }
     }
 
@@ -1344,7 +1344,7 @@ declare module 'sketch/dom' {
         Symbol = 'Symbol',
         LayerStyle = 'LayerStyle',
         TextStyle = 'TextStyle',
-        Unknown = 'Unknown'
+        Unknown = 'Unknown',
       }
       /**
        * Enumeration of the types of Importable Objects.
@@ -2349,7 +2349,7 @@ declare module 'sketch/ui' {
     export enum INPUT_TYPE {
       string = 'string',
       selection = 'selection',
-      slider = 'slider'
+      slider = 'slider',
     }
 
     export interface StringInputOptions<T extends string | number> {
