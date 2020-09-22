@@ -33,7 +33,8 @@ declare const NSFontCondensedTrait: any;
 declare const NSFontWeightTrait: any;
 declare const NSFontManager: any;
 
-export type LineHeight =
+type LineHeightProperty<T> = T;
+type LineHeight =
   | number
   | '-moz-initial'
   | 'inherit'
@@ -41,9 +42,8 @@ export type LineHeight =
   | 'revert'
   | 'unset'
   | 'normal'
-  | string
   | 0
- 
+  | LineHeightProperty<string | 0>[]
   | ((...args: any[]) => any)
   | (() => number)
   | string;
@@ -51,8 +51,8 @@ export type LineHeight =
 declare class NSMutableParagraphStyle extends NSObject {
   static alloc(): NSMutableParagraphStyle;
 
-  minimumLineHeight: LineHeight;
   lineHeightMultiple: number;
+  minimumLineHeight: LineHeight;
   maximumLineHeight: LineHeight;
   alignment: any;
 }
