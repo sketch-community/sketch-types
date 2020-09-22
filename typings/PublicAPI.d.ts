@@ -197,8 +197,12 @@ declare module 'sketch/dom' {
       /**
        * A method to get all shared layer styles defined in the document.
        * @return Return an array of the layer SharedStyle objects defined in the document.
+       * @deprecated
        */
-      getSharedLayerStyles(): SharedStyle[];
+      getSharedLayerStyles(): IIOArray<SharedStyle, {
+        name: string;
+        style: IStyle;
+      }>;
 
       /**
        * A method to help find a shared style in the document.
@@ -210,8 +214,12 @@ declare module 'sketch/dom' {
       /**
        * A method to get all shared text styles defined in the document.
        * @return Return an array of the text SharedStyle objects defined in the document.
+       * @deprecated
        */
-      getSharedTextStyles(): SharedStyle[];
+      getSharedTextStyles(): IIOArray<SharedStyle, {
+        name: string;
+        style: IStyle;
+      }>;
 
       /**
        * A method to help find a shared style in the document.
@@ -275,6 +283,29 @@ declare module 'sketch/dom' {
        * Mutating the returned array will update the document colors.
        */
       colors: IIOArray<ColorAsset, IColorAsset>;
+
+
+      /**
+       * The list of all shared text styles defined in the document.
+       * 
+       * Mutating the returned array will update the document styles.
+       */
+      sharedTextStyles: IIOArray<SharedStyle, {
+        name: string;
+        style: IStyle;
+      }>;
+
+      /**
+       * The list of all shared layer styles defined in the document.
+       * 
+       * Mutating the returned array will update the document styles.
+       */
+      sharedLayerStyles: IIOArray<SharedStyle, {
+        name: string;
+        style: IStyle;
+      }>;
+    }
+
 
       /**
        * The color-space of the document
