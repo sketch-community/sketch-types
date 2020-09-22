@@ -1,3 +1,4 @@
-/// <reference path="./InternalAPI.d.ts" />
-/// <reference path="./SketchContext.d.ts" />
-/// <reference path="./PublicAPI.d.ts" />
+/// <reference path="./PublicAPI/index.d.ts" />
+/// <reference path="./PublicAPI/SketchContext.d.ts" />
+/// <reference path="./InternalAPI/index.d.ts" />
+/// <reference path="./AppKit/index.d.ts" />

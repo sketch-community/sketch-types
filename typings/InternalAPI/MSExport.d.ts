@@ -1279,3 +1279,222 @@ declare class MSExportStackView extends MSStackView {
   /* typeEncoding=v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16 */
   drawRect(...args: any[]): any;
 }
+
+declare class _MSExportFormat extends MSModelObject {
+  /* typeEncoding=d, ivar=_absoluteSize, attributes=(assign,nonatomic) */
+  absoluteSize(): number;
+  /* typeEncoding=@"NSString", ivar=_fileFormat, attributes=(retain,nonatomic) */
+  fileFormat(): NSString;
+  /* typeEncoding=@"NSString", ivar=_name, attributes=(retain,nonatomic) */
+  name(): NSString;
+  /* typeEncoding=q, ivar=_namingScheme, attributes=(assign,nonatomic) */
+  namingScheme(): number;
+  /* typeEncoding=d, ivar=_scale, attributes=(assign,nonatomic) */
+  scale(): number;
+  /* typeEncoding=q, ivar=_visibleScaleType, attributes=(assign,nonatomic) */
+  visibleScaleType(): number;
+
+  /* typeEncoding=c16@0:8 */
+  static allowsFaulting(...args: any[]): any;
+  /* typeEncoding=#16@0:8 */
+  static immutableClass(...args: any[]): any;
+
+  /* typeEncoding=v16@0:8 */
+  _cxx_destruct(): void;
+  /* typeEncoding=d16@0:8 */
+  absoluteSize(...args: any[]): any;
+  /* typeEncoding=v32@0:8@16Q24 */
+  copyPropertiesToObject_options(...args: any[]): any;
+  /* typeEncoding=v24@0:8@?16 */
+  enumerateChildProperties(...args: any[]): any;
+  /* typeEncoding=v24@0:8@?16 */
+  enumerateProperties(...args: any[]): any;
+  /* typeEncoding=@16@0:8 */
+  fileFormat(...args: any[]): any;
+  /* typeEncoding=c16@0:8 */
+  hasDefaultValues(...args: any[]): any;
+  /* typeEncoding=v16@0:8 */
+  initializeUnsetObjectPropertiesWithDefaults(): void;
+  /* typeEncoding=@16@0:8 */
+  name(...args: any[]): any;
+  /* typeEncoding=q16@0:8 */
+  namingScheme(...args: any[]): any;
+  /* typeEncoding=v16@0:8 */
+  performInitEmptyObject(): void;
+  /* typeEncoding=v24@0:8@16 */
+  performInitWithImmutableModelObject(...args: any[]): any;
+  /* typeEncoding=c24@0:8@16 */
+  propertiesAreEqual(...args: any[]): any;
+  /* typeEncoding=d16@0:8 */
+  scale(...args: any[]): any;
+  /* typeEncoding=v24@0:8d16 */
+  setAbsoluteSize(...args: any[]): any;
+  /* typeEncoding=v16@0:8 */
+  setAsParentOnChildren(): void;
+  /* typeEncoding=v24@0:8@16 */
+  setFileFormat(...args: any[]): any;
+  /* typeEncoding=v24@0:8@16 */
+  setName(...args: any[]): any;
+  /* typeEncoding=v24@0:8q16 */
+  setNamingScheme(...args: any[]): any;
+  /* typeEncoding=v24@0:8d16 */
+  setScale(...args: any[]): any;
+  /* typeEncoding=v24@0:8q16 */
+  setVisibleScaleType(...args: any[]): any;
+  /* typeEncoding=v24@0:8@16 */
+  syncPropertiesFromObject(...args: any[]): any;
+  /* typeEncoding=q16@0:8 */
+  visibleScaleType(...args: any[]): any;
+}
+
+declare class _MSExportOptions extends MSModelObject {
+  /* typeEncoding=@"NSArray", ivar=_exportFormats, attributes=(retain,nonatomic) */
+  exportFormats(): NSArray;
+  /* typeEncoding=@"NSArray", ivar=_includedLayerIds, attributes=(retain,nonatomic) */
+  includedLayerIds(): NSArray;
+  /* typeEncoding=Q, ivar=_layerOptions, attributes=(assign,nonatomic) */
+  layerOptions(): number;
+  /* typeEncoding=c, ivar=_shouldTrim, attributes=(assign,nonatomic) */
+  shouldTrim(): boolean;
+
+  /* typeEncoding=c16@0:8 */
+  static allowsFaulting(...args: any[]): any;
+  /* typeEncoding=#16@0:8 */
+  static immutableClass(...args: any[]): any;
+
+  /* typeEncoding=v16@0:8 */
+  _cxx_destruct(): void;
+  /* typeEncoding=v24@0:8@16 */
+  addExportFormat(...args: any[]): any;
+  /* typeEncoding=v24@0:8@16 */
+  addExportFormats(...args: any[]): any;
+  /* typeEncoding=v32@0:8@16Q24 */
+  copyPropertiesToObject_options(...args: any[]): any;
+  /* typeEncoding=v24@0:8@?16 */
+  enumerateChildProperties(...args: any[]): any;
+  /* typeEncoding=v24@0:8@?16 */
+  enumerateProperties(...args: any[]): any;
+  /* typeEncoding=@16@0:8 */
+  exportFormats(...args: any[]): any;
+  /* typeEncoding=c16@0:8 */
+  hasDefaultValues(...args: any[]): any;
+  /* typeEncoding=@16@0:8 */
+  includedLayerIds(...args: any[]): any;
+  /* typeEncoding=v16@0:8 */
+  initializeUnsetObjectPropertiesWithDefaults(): void;
+  /* typeEncoding=v32@0:8@16@24 */
+  insertExportFormat_afterExportFormat(...args: any[]): any;
+  /* typeEncoding=v32@0:8@16Q24 */
+  insertExportFormat_atIndex(...args: any[]): any;
+  /* typeEncoding=v32@0:8@16@24 */
+  insertExportFormat_beforeExportFormat(...args: any[]): any;
+  /* typeEncoding=v32@0:8@16@24 */
+  insertExportFormats_afterExportFormat(...args: any[]): any;
+  /* typeEncoding=v32@0:8@16@24 */
+  insertExportFormats_beforeExportFormat(...args: any[]): any;
+  /* typeEncoding=Q16@0:8 */
+  layerOptions(...args: any[]): any;
+  /* typeEncoding=v32@0:8Q16Q24 */
+  moveExportFormatIndex_toIndex(...args: any[]): any;
+  /* typeEncoding=v16@0:8 */
+  performInitEmptyObject(): void;
+  /* typeEncoding=v24@0:8@16 */
+  performInitWithImmutableModelObject(...args: any[]): any;
+  /* typeEncoding=c24@0:8@16 */
+  propertiesAreEqual(...args: any[]): any;
+  /* typeEncoding=v16@0:8 */
+  removeAllExportFormats(): void;
+  /* typeEncoding=v24@0:8@16 */
+  removeExportFormat(...args: any[]): any;
+  /* typeEncoding=v24@0:8Q16 */
+  removeExportFormatAtIndex(...args: any[]): any;
+  /* typeEncoding=v24@0:8@16 */
+  removeExportFormatsAtIndexes(...args: any[]): any;
+  /* typeEncoding=v16@0:8 */
+  setAsParentOnChildren(): void;
+  /* typeEncoding=v24@0:8@16 */
+  setExportFormats(...args: any[]): any;
+  /* typeEncoding=v24@0:8@16 */
+  setIncludedLayerIds(...args: any[]): any;
+  /* typeEncoding=v24@0:8Q16 */
+  setLayerOptions(...args: any[]): any;
+  /* typeEncoding=v20@0:8c16 */
+  setShouldTrim(...args: any[]): any;
+  /* typeEncoding=c16@0:8 */
+  shouldTrim(...args: any[]): any;
+  /* typeEncoding=v24@0:8@16 */
+  syncPropertiesFromObject(...args: any[]): any;
+}
+
+declare class _MSExportPreset extends MSModelObject {
+  /* typeEncoding=@"NSArray", ivar=_exportFormats, attributes=(retain,nonatomic) */
+  exportFormats(): NSArray;
+  /* typeEncoding=@"NSString", ivar=_name, attributes=(retain,nonatomic) */
+  name(): NSString;
+  /* typeEncoding=c, ivar=_shouldApplyAutomatically, attributes=(assign,nonatomic) */
+  shouldApplyAutomatically(): boolean;
+
+  /* typeEncoding=c16@0:8 */
+  static allowsFaulting(...args: any[]): any;
+  /* typeEncoding=#16@0:8 */
+  static immutableClass(...args: any[]): any;
+
+  /* typeEncoding=v16@0:8 */
+  _cxx_destruct(): void;
+  /* typeEncoding=v24@0:8@16 */
+  addExportFormat(...args: any[]): any;
+  /* typeEncoding=v24@0:8@16 */
+  addExportFormats(...args: any[]): any;
+  /* typeEncoding=v32@0:8@16Q24 */
+  copyPropertiesToObject_options(...args: any[]): any;
+  /* typeEncoding=v24@0:8@?16 */
+  enumerateChildProperties(...args: any[]): any;
+  /* typeEncoding=v24@0:8@?16 */
+  enumerateProperties(...args: any[]): any;
+  /* typeEncoding=@16@0:8 */
+  exportFormats(...args: any[]): any;
+  /* typeEncoding=c16@0:8 */
+  hasDefaultValues(...args: any[]): any;
+  /* typeEncoding=v16@0:8 */
+  initializeUnsetObjectPropertiesWithDefaults(): void;
+  /* typeEncoding=v32@0:8@16@24 */
+  insertExportFormat_afterExportFormat(...args: any[]): any;
+  /* typeEncoding=v32@0:8@16Q24 */
+  insertExportFormat_atIndex(...args: any[]): any;
+  /* typeEncoding=v32@0:8@16@24 */
+  insertExportFormat_beforeExportFormat(...args: any[]): any;
+  /* typeEncoding=v32@0:8@16@24 */
+  insertExportFormats_afterExportFormat(...args: any[]): any;
+  /* typeEncoding=v32@0:8@16@24 */
+  insertExportFormats_beforeExportFormat(...args: any[]): any;
+  /* typeEncoding=v32@0:8Q16Q24 */
+  moveExportFormatIndex_toIndex(...args: any[]): any;
+  /* typeEncoding=@16@0:8 */
+  name(...args: any[]): any;
+  /* typeEncoding=v16@0:8 */
+  performInitEmptyObject(): void;
+  /* typeEncoding=v24@0:8@16 */
+  performInitWithImmutableModelObject(...args: any[]): any;
+  /* typeEncoding=c24@0:8@16 */
+  propertiesAreEqual(...args: any[]): any;
+  /* typeEncoding=v16@0:8 */
+  removeAllExportFormats(): void;
+  /* typeEncoding=v24@0:8@16 */
+  removeExportFormat(...args: any[]): any;
+  /* typeEncoding=v24@0:8Q16 */
+  removeExportFormatAtIndex(...args: any[]): any;
+  /* typeEncoding=v24@0:8@16 */
+  removeExportFormatsAtIndexes(...args: any[]): any;
+  /* typeEncoding=v16@0:8 */
+  setAsParentOnChildren(): void;
+  /* typeEncoding=v24@0:8@16 */
+  setExportFormats(...args: any[]): any;
+  /* typeEncoding=v24@0:8@16 */
+  setName(...args: any[]): any;
+  /* typeEncoding=v20@0:8c16 */
+  setShouldApplyAutomatically(...args: any[]): any;
+  /* typeEncoding=c16@0:8 */
+  shouldApplyAutomatically(...args: any[]): any;
+  /* typeEncoding=v24@0:8@16 */
+  syncPropertiesFromObject(...args: any[]): any;
+}

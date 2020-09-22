@@ -1,11 +1,8 @@
-<<<<<<< HEAD:typings/AppKit/ToOrganized.d.ts
-
-=======
 /// <reference path="./NSPasteboard.d.ts" />
 /// <reference path="./NSFont.d.ts" />
 
 // NS 开头的都是 Appkit(苹果自身的接口)
->>>>>>> origin/master:typings/appkit/index.d.ts
+
 declare const NSUTF8StringEncoding: number;
 
 declare const NSTitledWindowMask: number;
@@ -176,14 +173,12 @@ declare class NSFormatter {}
 declare class NSGradient {}
 declare class NSGraphicsContext {}
 declare class NSHashTable {}
-<<<<<<< HEAD:typings/AppKit/ToOrganized.d.ts
-declare class NSImage {}
-=======
+
 declare class NSImage {
   static alloc(): NSImage;
   initWithData(imgData: any): this;
 }
->>>>>>> origin/master:typings/appkit/index.d.ts
+
 declare class NSImageCell {}
 declare class NSImageView {}
 declare class NSIndexPath {}
@@ -286,7 +281,6 @@ declare class NSTableCellView {}
 declare class NSTableView {}
 
 declare class NSStoryboard {}
-
 
 declare class NSTimer {}
 declare class NSToolbar {}

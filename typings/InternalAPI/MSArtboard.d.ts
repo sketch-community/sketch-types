@@ -1,6 +1,7 @@
 /// <reference path="../AppKit/NSFont.d.ts" />
 
-declare class MSArtboardBackgroundColorInspectorItem extends MSInspectorItem /* implements MSColorInspectorDelegate, BCPopoverDelegate, MSStylePartPreviewButtonDelegate, MSStylePartPreviewButtonDisabledTarget */ {
+/* implements MSColorInspectorDelegate, BCPopoverDelegate, MSStylePartPreviewButtonDelegate, MSStylePartPreviewButtonDisabledTarget */
+declare class MSArtboardBackgroundColorInspectorItem extends MSInspectorItem {
   /* typeEncoding=@"MSStylePartPreviewButton", ivar=_backgroundColorButton, attributes=(retain,nonatomic) */
   backgroundColorButton(): MSStylePartPreviewButton;
   /* typeEncoding=@"MSInspectorValueAdaptor", ivar=_colorAdaptor, attributes=(retain,nonatomic) */
@@ -789,8 +790,7 @@ declare class MSArtboardPresetsTableView extends NSTableView {
   menuForEvent(...args: any[]): any;
 }
 
-declare class MSArtboardPresetsViewControllerDelegate {
-}
+declare class MSArtboardPresetsViewControllerDelegate {}
 
 declare class MSArtboardPresetsViewController extends NSViewController /* implements NSTableViewDataSource, NSTableViewDelegate, MSEditArtboardPresetViewControllerDelegate, NSUserInterfaceValidations, BCPopoverDelegate */ {
   /* typeEncoding=@"NSArray", ivar=_arrangedObjects, attributes=(assign,nonatomic,readonly) */
@@ -1105,4 +1105,3 @@ declare class MSArtboardTitleRenderer extends NSObject {
   /* typeEncoding=@16@0:8 */
   titleMap(...args: any[]): any;
 }
-
