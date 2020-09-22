@@ -6,6 +6,7 @@
 /// <reference path="./NSPasteboard.d.ts" />
 /// <reference path="./NSString.d.ts" />
 /// <reference path="./NSURL.d.ts" />
+/// <reference path="./NSData.d.ts" />
 
 /// <reference path="./WKWebView.d.ts" />
 

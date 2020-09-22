@@ -155,7 +155,6 @@ declare class NSColorWell {}
 declare class NSComboBox {}
 declare class NSControl {}
 declare class NSCursor {}
-declare class NSData {}
 declare class NSDate {}
 /**
  * 线程目录
