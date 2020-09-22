@@ -117,7 +117,6 @@ declare class ECLogChannel {}
 declare class ECLogHandler {}
 declare class NSAffineTransform {}
 
-declare class NSArrayController {}
 declare class NSATSTypesetter {}
 declare class NSAttributedString {
   static attributedStringWithString_attributes_(content: any, attribs: any);
@@ -288,11 +287,6 @@ declare class NSToolbarItem {}
 declare class NSTouchBar {}
 declare class NSTouchBarItem {}
 declare class NSUndoManager {}
-declare class NSURL {
-  static URLWithString(url: string): NSURL;
-  static fileURLWithPath(path: string): NSURL;
-}
-declare class NSURLSession {}
 
 declare class NSViewController {}
 declare class NSWindow extends NSResponder {
@@ -334,19 +328,13 @@ declare class CGVector {
 declare class CGFloat extends Number {}
 declare class NSCopying extends NSObject {}
 declare class NSFileWrapper {}
-declare class NSURLSessionDataTask {}
-declare class NSURLProtocol {}
-declare class NSURLSessionTask {}
+
 declare class NSMutableURLRequest {}
 declare class SCKAPIAuthentication {}
 declare class SCKAPISignable {}
 declare class SCKArtboardViewport {}
-declare class NSURLRequest {
-  static requestWithURL(url: NSURL): NSURLRequest;
-}
-declare class NSURLSessionDownloadTask {}
-declare class NSUUID {}
-declare class NSURLSessionUploadTask {}
+
+declare class NSPointerArray {}
 declare class SCKShareUploadDataSource {}
 
 declare class SCKCloudDocument {}

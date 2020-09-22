@@ -5,3 +5,5 @@ declare class NSArray<T = NSObject> extends Array {
 
   static arrayWithArray(array: any): NSArray;
 }
+
+declare class NSArrayController {}

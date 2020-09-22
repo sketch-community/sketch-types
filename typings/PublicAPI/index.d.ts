@@ -1,4 +1,4 @@
-/// <reference path="../InternalAPI/index.d.ts" />
+/// <reference path="../InternalAPI/ToOrganized.d.ts" />
 /// <reference path="../IIOArray.d.ts" />
 
 declare module 'sketch/dom' {

@@ -1,4 +1,5 @@
-declare class MSDocument extends NSDocument /* implements MSCloudExportableDocument, MSSidebarControllerDelegate, BCSideBarViewControllerDelegate, NSMenuDelegate, NSToolbarDelegate, NSWindowDelegate, MSEventHandlerManagerDelegate, MSDocumentDataDelegate, MSMenuBuilderDelegate */ {
+/* implements MSCloudExportableDocument, MSSidebarControllerDelegate, BCSideBarViewControllerDelegate, NSMenuDelegate, NSToolbarDelegate, NSWindowDelegate, MSEventHandlerManagerDelegate, MSDocumentDataDelegate, MSMenuBuilderDelegate */
+declare class MSDocument extends NSDocument {
   /* typeEncoding=@"NSDictionary", ivar=(null), attributes=(assign,nonatomic,readonly) */
   UIMetadata(): NSDictionary;
   /* typeEncoding=@"NSDictionary", ivar=(null), attributes=(retain,nonatomic) */
