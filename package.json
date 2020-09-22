@@ -1,28 +1,36 @@
 {
   "name": "sketch-typings",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Community built set of typescript declarations for writing Sketch plugins.",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arvinxx/sketch-typings.git"
   },
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "test": "npm run lint",
+    "prettier": "prettier **/*.ts",
+    "lint": "npm run prettier -- -c",
+    "publish": "npm publish",
+    "prepublishOnly": "np  --no-cleanup --yolo"
   },
   "license": "MIT",
   "author": "Arvin Xu <arvinx@foxmail.com> (https://www.arvinx.com)",
-  "typings": "typings",
+  "types": "./typings/index.d.ts",
   "files": [
     "typings"
   ],
   "devDependencies": {
-    "@sketch-hq/sketch-file-format-ts": "^5.1.0",
     "np": "^6.4.0",
     "prettier": "^2.1.1",
     "typescript": "^3.9.5"
   },
   "bugs": {
     "url": "https://github.com/arvinxx/sketch-typings/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "homepage": "https://github.com/arvinxx/sketch-typings#readme"
 }

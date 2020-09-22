@@ -1,3 +1,5 @@
+/// <reference path="appkit/index.d.ts" />
+
 // Internal API for full access to the Sketch Objective-C runtime
 
 // For a deeper integration with Sketch,

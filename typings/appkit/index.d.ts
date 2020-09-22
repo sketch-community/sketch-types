@@ -1,3 +1,6 @@
+/// <reference path="./NSPasteboard.d.ts" />
+/// <reference path="./NSFont.d.ts" />
+
 // NS 开头的都是 Appkit(苹果自身的接口)
 declare const NSUTF8StringEncoding: number;
 declare const NSViewWidthSizable: number;
@@ -179,7 +182,7 @@ declare class NSGraphicsContext {}
 declare class NSHashTable {}
 declare class NSImage {
   static alloc(): NSImage;
-  initWithData(imgData:any): this;
+  initWithData(imgData: any): this;
 }
 declare class NSImageCell {}
 declare class NSImageView {}
