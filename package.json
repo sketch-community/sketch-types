@@ -12,8 +12,9 @@
     "test": "npm run lint",
     "prettier": "prettier **/*.ts",
     "lint": "npm run prettier -- -c",
-    "publish": "npm publish",
-    "prepublishOnly": "np  --no-cleanup --yolo"
+    "publish": "np  --no-cleanup --yolo",
+    "publish:next": "np  --no-cleanup --yolo --tag=next",
+    "prepublishOnly": ""
   },
   "license": "MIT",
   "author": "Arvin Xu <arvinx@foxmail.com> (https://www.arvinx.com)",
