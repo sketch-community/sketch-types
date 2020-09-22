@@ -2,9 +2,9 @@
 /// <reference path="./NSFont.d.ts" />
 
 // NS 开头的都是 Appkit(苹果自身的接口)
+
 declare const NSUTF8StringEncoding: number;
-declare const NSViewWidthSizable: number;
-declare const NSViewHeightSizable: number;
+
 declare const NSTitledWindowMask: number;
 declare const NSWindowStyleMaskClosable: number;
 declare const NSResizableWindowMask: number;
@@ -12,7 +12,6 @@ declare const NSBackingStoreBuffered: number;
 declare const NSLayoutAttributeHeight: number;
 declare const NSLayoutRelationEqual: number;
 declare const NSLayoutAttributeTop: any;
-declare class NSPointerArray {}
 
 declare function NSClassFromString(name: string): any;
 declare function NSMakeRect(x: number, y: number, w: number, h: number): NSRect;
@@ -117,14 +116,7 @@ declare class DKDistortionTransform {}
 declare class ECLogChannel {}
 declare class ECLogHandler {}
 declare class NSAffineTransform {}
-declare class NSArray<T = NSObject> extends Array {
-  [index: number]: T;
-  count(): number;
-  objectAtIndex(index: number): T;
 
-  static arrayWithArray(array: any): NSArray;
-}
-declare class NSArrayController {}
 declare class NSATSTypesetter {}
 declare class NSAttributedString {
   static attributedStringWithString_attributes_(content: any, attribs: any);
@@ -163,7 +155,6 @@ declare class NSColorWell {}
 declare class NSComboBox {}
 declare class NSControl {}
 declare class NSCursor {}
-declare class NSData {}
 declare class NSDate {}
 /**
  * 线程目录
@@ -180,10 +171,12 @@ declare class NSFormatter {}
 declare class NSGradient {}
 declare class NSGraphicsContext {}
 declare class NSHashTable {}
+
 declare class NSImage {
   static alloc(): NSImage;
   initWithData(imgData: any): this;
 }
+
 declare class NSImageCell {}
 declare class NSImageView {}
 declare class NSIndexPath {}
@@ -217,19 +210,7 @@ declare class NSMutableString {}
 declare class NSNib {}
 declare class NSNumber extends Number {}
 declare class NSNumberFormatter {}
-declare class NSObject {
-  /**
-   * Implemented by subclasses to initialize a new object (the receiver)
-   * immediately after memory for it has been allocated.
-   *
-   */
-  init(): this;
 
-  alloc(): this;
-  class(): any;
-  className(): NSString;
-  isKindOfClass<T extends NSObject>(arg: { new (): T }): this is T;
-}
 declare class NSOperation {}
 declare class NSOperationQueue {}
 declare class NSPanGestureRecognizer {}
@@ -294,52 +275,18 @@ declare class NSStackView extends NSView {
 
   setBackgroundColor(color: NSColor): void;
 }
-
-declare class NSStoryboard {}
-declare class NSString extends String {
-  static stringWithContentsOfFile_encoding_error(...args: any[]): NSString;
-  static stringWithFormat(...args: any[]): NSString;
-  static stringWithString(rawString: string): NSString;
-
-  dataUsingEncoding(NSUTF8StringEncoding: number): any;
-}
 declare class NSTableCellView {}
 declare class NSTableView {}
-declare class NSTextField {}
-declare class NSTextFieldCell {}
-declare class NSTextStorage {}
-declare class NSTextView {}
+
+declare class NSStoryboard {}
+
 declare class NSTimer {}
 declare class NSToolbar {}
 declare class NSToolbarItem {}
 declare class NSTouchBar {}
 declare class NSTouchBarItem {}
 declare class NSUndoManager {}
-declare class NSURL {
-  static URLWithString(url: string): NSURL;
-  static fileURLWithPath(path: string): NSURL;
-}
-declare class NSURLSession {}
-/**
- *  NSView 类
- *  @see https://developer.apple.com/documentation/appkit/nsview
- */
-declare class NSView extends NSResponder {
-  adjustSubviews(): void;
 
-  subviews(): NSArray<NSView>;
-  setSubviews(views: NSArray<NSView>);
-  identifier(): string;
-  setIdentifier(id: string): void;
-  initWithFrame<T = NSView>(rect: NSRect): T;
-
-  /**
-   * View是否翻转坐标系
-   * https://developer.apple.com/documentation/appkit/nsview/1483532-flipped?language=occ
-   */
-  readonly flipped: boolean;
-  setFlipped(boolean): void;
-}
 declare class NSViewController {}
 declare class NSWindow extends NSResponder {
   contentView(): NSView;
@@ -380,40 +327,15 @@ declare class CGVector {
 declare class CGFloat extends Number {}
 declare class NSCopying extends NSObject {}
 declare class NSFileWrapper {}
-declare class NSURLSessionDataTask {}
-declare class NSURLProtocol {}
-declare class NSURLSessionTask {}
+
 declare class NSMutableURLRequest {}
 declare class SCKAPIAuthentication {}
 declare class SCKAPISignable {}
 declare class SCKArtboardViewport {}
-declare class NSURLRequest {
-  static requestWithURL(url: NSURL): NSURLRequest;
-}
-declare class NSURLSessionDownloadTask {}
-declare class NSUUID {}
-declare class NSURLSessionUploadTask {}
+
+declare class NSPointerArray {}
 declare class SCKShareUploadDataSource {}
 
-declare class WKWebView extends NSView {
-  static alloc(): {
-    initWithFrame_configuration(
-      CGRect: CGRect,
-      config: WKWebViewConfiguration
-    ): WKWebView;
-  };
-  loadRequest(request: NSURLRequest): void;
-  loadFileURL_allowingReadAccessToURL(url: NSURL, isDirectory: boolean): void;
-  setAutoresizingMask(mask: number): void;
-  evaluateJavaScript_completionHandler(js: string, cb: () => void): void;
-}
-
-/**
- * @see https://developer.apple.com/documentation/webkit/wkwebviewconfiguration
- */
-declare class WKWebViewConfiguration {
-  static alloc(): any;
-}
 declare class SCKCloudDocument {}
 
 declare class NSValueTransformer {}
@@ -421,14 +343,9 @@ declare class NSTableRowView {}
 declare class SCKAPIEnvironment {}
 declare class SCKUser {}
 declare class SCKOrganization {}
-
-declare class MSInspectorFlowHandlerDelegate {}
 declare class NSSegmentedCell {}
 declare class NSSliderCell {}
-declare class MSInspectorTableViewManagerDelegate {}
-declare class MSLayerCoordinateSpace {}
-declare class NSEnumerator {}
-declare class MSInspectorMathValueAdaptorDelegate {}
+
 declare class MTLCommandBuffer {}
 declare class CAMetalDrawable {}
 declare class MTLRenderPipelineState {}

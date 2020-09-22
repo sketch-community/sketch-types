@@ -1,4 +1,4 @@
-/// <reference path="appkit/index.d.ts" />
+/// <reference path="./AppKit/index.d.ts" />
 /*
 ABOUT:
 The rest of this file are bare minimum types referenced in sketch.d.ts.

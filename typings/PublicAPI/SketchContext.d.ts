@@ -1,4 +1,4 @@
-/// <reference path="./InternalAPI.d.ts" />
+/// <reference path="../InternalAPI/ToOrganized.d.ts" />
 
 declare interface SketchContext {
   api(): any;
