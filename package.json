@@ -11,7 +11,9 @@
     "tsc": "tsc",
     "test": "npm run lint",
     "prettier": "prettier **/*.ts",
-    "lint": "npm run prettier -- -c"
+    "lint": "npm run prettier -- -c",
+    "publish": "npm publish",
+    "prepublishOnly": "np  --no-cleanup --yolo"
   },
   "license": "MIT",
   "author": "Arvin Xu <arvinx@foxmail.com> (https://www.arvinx.com)",
