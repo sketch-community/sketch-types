@@ -43,8 +43,22 @@ Community built set of [typescript declarations][dec] for writing [Sketch plugin
 
 ## Usage
 
+First, install typings
 ```sh
 $ npm i sketch-typings -D
+```
+
+Then you need to add the typings directory to your tsconfig.json using the typeRoots option:
+```json5
+{
+  "compilerOptions": {
+    // ...
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/sketch-typings"
+    ]
+  }
+}
 ```
 
 ## License
