@@ -1,6 +1,6 @@
 {
   "name": "sketch-typings",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Community built set of typescript declarations for writing Sketch plugins.",
   "main": "index.js",
   "repository": {
