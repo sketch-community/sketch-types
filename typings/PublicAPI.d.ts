@@ -1,5 +1,5 @@
 /// <reference path="./InternalAPI.d.ts" />
-/// <reference path="./IIOArray.ts" />
+/// <reference path="./IIOArray.d.ts" />
 
 declare module 'sketch/dom' {
   class dom {
@@ -199,10 +199,13 @@ declare module 'sketch/dom' {
        * @return Return an array of the layer SharedStyle objects defined in the document.
        * @deprecated
        */
-      getSharedLayerStyles(): IIOArray<SharedStyle, {
-        name: string;
-        style: IStyle;
-      }>;
+      getSharedLayerStyles(): IIOArray<
+        SharedStyle,
+        {
+          name: string;
+          style: IStyle;
+        }
+      >;
 
       /**
        * A method to help find a shared style in the document.
@@ -216,10 +219,13 @@ declare module 'sketch/dom' {
        * @return Return an array of the text SharedStyle objects defined in the document.
        * @deprecated
        */
-      getSharedTextStyles(): IIOArray<SharedStyle, {
-        name: string;
-        style: IStyle;
-      }>;
+      getSharedTextStyles(): IIOArray<
+        SharedStyle,
+        {
+          name: string;
+          style: IStyle;
+        }
+      >;
 
       /**
        * A method to help find a shared style in the document.
@@ -284,28 +290,31 @@ declare module 'sketch/dom' {
        */
       colors: IIOArray<ColorAsset, IColorAsset>;
 
-
       /**
        * The list of all shared text styles defined in the document.
-       * 
+       *
        * Mutating the returned array will update the document styles.
        */
-      sharedTextStyles: IIOArray<SharedStyle, {
-        name: string;
-        style: IStyle;
-      }>;
+      sharedTextStyles: IIOArray<
+        SharedStyle,
+        {
+          name: string;
+          style: IStyle;
+        }
+      >;
 
       /**
        * The list of all shared layer styles defined in the document.
-       * 
+       *
        * Mutating the returned array will update the document styles.
        */
-      sharedLayerStyles: IIOArray<SharedStyle, {
-        name: string;
-        style: IStyle;
-      }>;
-    }
-
+      sharedLayerStyles: IIOArray<
+        SharedStyle,
+        {
+          name: string;
+          style: IStyle;
+        }
+      >;
 
       /**
        * The color-space of the document
