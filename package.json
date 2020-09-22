@@ -14,7 +14,6 @@
     "lint": "npm run prettier -- -c",
     "publish": "np  --no-cleanup --yolo",
     "publish:next": "np  --no-cleanup --yolo --tag=next",
-    "prepublishOnly": ""
   },
   "license": "MIT",
   "author": "Arvin Xu <arvinx@foxmail.com> (https://www.arvinx.com)",
