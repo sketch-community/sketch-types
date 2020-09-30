@@ -34,7 +34,7 @@ declare const NSFontWeightTrait: any;
 declare const NSFontManager: any;
 
 type LineHeightProperty<T> = T;
-type LineHeight =
+type NSLineHeight =
   | number
   | '-moz-initial'
   | 'inherit'
@@ -52,7 +52,7 @@ declare class NSMutableParagraphStyle extends NSObject {
   static alloc(): NSMutableParagraphStyle;
 
   lineHeightMultiple: number;
-  minimumLineHeight: LineHeight;
-  maximumLineHeight: LineHeight;
+  minimumLineHeight: NSLineHeight;
+  maximumLineHeight: NSLineHeight;
   alignment: any;
 }
