@@ -43,23 +43,33 @@ Community built set of [typescript declarations][dec] for writing [Sketch plugin
 
 ## Usage
 
-First, install typings
+First, install sketch-typings
+
 ```sh
-$ npm i sketch-types -D
+$ npm i sketch-typings -D
 ```
 
-Then you need to add the typings directory to your tsconfig.json using the typeRoots option:
+or 
+
+```sh
+$ yarn add sketch-typings -D
+```
+
+
+Then you need to add the typings directory to your tsconfig.json using the types option:
 ```json5
 {
   "compilerOptions": {
     // ...
-    "typeRoots": [
-      "./node_modules/@types",
-      "./node_modules/sketch-types"
-    ]
+    "types": ["sketch-typings"]
   }
 }
 ```
+## More types about sketch or macOS
+
+if you just want sketch internal types or cocoascript types, please check:
+- [sketch-internal-types](https://github.com/sketch-community/sketch-internal-types)
+- [cocoascript-types](https://github.com/sketch-community/cocoascript-types)
 
 ## License
 
