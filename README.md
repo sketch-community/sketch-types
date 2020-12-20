@@ -1,4 +1,4 @@
-<h1 align="center">Sketch-Types</h1>
+<h1 align="center">Sketch Types</h1>
 
 <div align="center">
 
