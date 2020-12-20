@@ -1,3 +1,5 @@
+**Notice: previous `sketch-typings` now rename to `sketch-types` for unify the types format**
+
 <h1 align="center">Sketch Types</h1>
 
 <div align="center">
@@ -34,8 +36,6 @@
 </div>
 
 ------
-
-Notices: previous sketch-typings now rename to sketch-types for unify the types format.
 
 Community built set of [typescript declarations][dec] for writing [Sketch plugins][sketch-api].
 
