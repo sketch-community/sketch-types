@@ -45,7 +45,7 @@ Community built set of [typescript declarations][dec] for writing [Sketch plugin
 
 First, install typings
 ```sh
-$ npm i sketch-typings -D
+$ npm i sketch-types -D
 ```
 
 Then you need to add the typings directory to your tsconfig.json using the typeRoots option:
@@ -55,7 +55,7 @@ Then you need to add the typings directory to your tsconfig.json using the typeR
     // ...
     "typeRoots": [
       "./node_modules/@types",
-      "./node_modules/sketch-typings"
+      "./node_modules/sketch-types"
     ]
   }
 }

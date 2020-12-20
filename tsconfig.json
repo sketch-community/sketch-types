@@ -10,8 +10,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "emitDecoratorMetadata": true,
-    "typeRoots": ["./typings"],
+    "typeRoots": [
+      "./types"
+    ],
     "experimentalDecorators": true,
+    "types": ["cocoascript-types", "sketch-internal-types"],
     "newLine": "lf",
     "strict": false,
     "moduleResolution": "node",

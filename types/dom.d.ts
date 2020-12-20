@@ -1,6 +1,3 @@
-/// <reference path="../InternalAPI/index.d.ts" />
-/// <reference path="../IIOArray.d.ts" />
-
 declare module 'sketch/dom' {
   class dom {
     /**
@@ -15,6 +12,39 @@ declare module 'sketch/dom' {
   }
 
   namespace dom {
+    import MSDocument = sketchInternal.MSDocument;
+    import MSLayer = sketchInternal.MSLayer;
+    import MSStyledLayer = sketchInternal.MSStyledLayer;
+    import MSLayerGroup = sketchInternal.MSLayerGroup;
+    import MSPage = sketchInternal.MSPage;
+    import MSArtboardGroup = sketchInternal.MSArtboardGroup;
+    import MSBitmapLayer = sketchInternal.MSBitmapLayer;
+    import MSImageData = sketchInternal.MSImageData;
+    import MSShapeGroup = sketchInternal.MSShapeGroup;
+    import MSShapePathLayer = sketchInternal.MSShapePathLayer;
+    import NSImage = cocoascript.NSImage;
+    import NSURL = cocoascript.NSURL;
+    import NSData = cocoascript.NSData;
+    import MSCurvePoint = sketchInternal.MSCurvePoint;
+    import MSTextLayer = sketchInternal.MSTextLayer;
+    import CGPoint = cocoascript.CGPoint;
+    import MSSymbolMaster = sketchInternal.MSSymbolMaster;
+    import MSSymbolInstance = sketchInternal.MSSymbolInstance;
+    import MSAvailableOverride = sketchInternal.MSAvailableOverride;
+    import MSHotspotLayer = sketchInternal.MSHotspotLayer;
+    import MSAssetLibrary = sketchInternal.MSAssetLibrary;
+    import MSShareableObjectReference = sketchInternal.MSShareableObjectReference;
+    import MSSymbolMasterReference = sketchInternal.MSSymbolMasterReference;
+    import MSSharedStyleReference = sketchInternal.MSSharedStyleReference;
+    import MSSharedLayerReference = sketchInternal.MSSharedLayerReference;
+    import MSSharedTextReference = sketchInternal.MSSharedTextReference;
+    import CGRect = cocoascript.CGRect;
+    import MSStyle = sketchInternal.MSStyle;
+    import MSSharedStyle = sketchInternal.MSSharedStyle;
+    import MSSliceLayer = sketchInternal.MSSliceLayer;
+    import NSFont = cocoascript.NSFont;
+    import NSRange = cocoascript.NSRange;
+
     class Component<NativeType = any> {
       static fromNative<NativeType>(
         nativeObject: NativeType
@@ -205,7 +235,7 @@ declare module 'sketch/dom' {
           name: string;
           style: IStyle;
         }
-      >;
+        >;
 
       /**
        * A method to help find a shared style in the document.
@@ -225,7 +255,7 @@ declare module 'sketch/dom' {
           name: string;
           style: IStyle;
         }
-      >;
+        >;
 
       /**
        * A method to help find a shared style in the document.
@@ -301,7 +331,7 @@ declare module 'sketch/dom' {
           name: string;
           style: IStyle;
         }
-      >;
+        >;
 
       /**
        * The list of all shared layer styles defined in the document.
@@ -314,7 +344,7 @@ declare module 'sketch/dom' {
           name: string;
           style: IStyle;
         }
-      >;
+        >;
 
       /**
        * The color-space of the document
@@ -362,7 +392,7 @@ declare module 'sketch/dom' {
 
     export abstract class Layer<
       NativeType extends MSLayer = MSLayer
-    > extends Component<NativeType> {
+      > extends Component<NativeType> {
       /**
        * The unique ID of the Layer. (not to be confused with symbolId on SymbolInstances)
        */
@@ -462,7 +492,7 @@ declare module 'sketch/dom' {
 
     class StyledLayer<NativeType extends MSStyledLayer> extends Layer<
       NativeType
-    > {
+      > {
       /**
        * The style of the layer.
        */
@@ -522,7 +552,7 @@ declare module 'sketch/dom' {
 
     class BaseGroup<
       NativeType extends MSLayerGroup = MSLayerGroup
-    > extends StyledLayer<NativeType> {
+      > extends StyledLayer<NativeType> {
       /**
        * The layers that this component groups together.
        */
@@ -607,7 +637,7 @@ declare module 'sketch/dom' {
 
     class BaseArtboard<
       NativeType extends MSArtboardGroup = MSArtboardGroup
-    > extends BaseGroup<MSArtboardGroup> {
+      > extends BaseGroup<MSArtboardGroup> {
       /**
        * The page the Artboard is in.
        */
@@ -1376,6 +1406,7 @@ declare module 'sketch/dom' {
     /**
      * A Sketch hotspot. It is an instance of both Layer so all the methods defined there are available.
      */
+      // @ts-ignore
     export class HotSpot extends Layer<MSHotspotLayer> {
       type: Types.HotSpot;
 
@@ -2354,389 +2385,4 @@ declare module 'sketch/dom' {
     }
   }
   export = dom;
-}
-
-declare module 'sketch/ui' {
-  import dom = require('sketch/dom');
-  /**
-   * A set of functions to show some user interfaces. The set is small on purpose. Any more complex UI should be provided by third party libraries and doesn’t need to be in the core.
-   */
-  namespace ui {
-    /**
-     * Show a small, temporary, message to the user. The message appears at the bottom of the selected document, and is visible for a short period of time. It should consist of a single line of text.
-     * @param text The message to show.
-     * @param document The document to show the message into.
-     */
-    export function message(text: string, document?: dom.Document): void;
-
-    /**
-     * Show an alert with a custom title and message. The alert is modal, so it will stay around until the user dismisses it by pressing the OK button.
-     * @param title The title of the alert.
-     * @param text The text of the message.
-     */
-    export function alert(title: string, text: string): void;
-
-    /**
-     * @deprecated
-     * Shows a simple input sheet which displays a message, and asks for a single string input.
-     * @param message The prompt message to show.
-     * @param initialValue The initial value of the input string.
-     * @return The string that the user input, or "null" (String) if the user clicked 'Cancel'.
-     */
-    export function getStringFromUser(
-      message: string,
-      initialValue?: string
-    ): string;
-
-    /**
-     * @deprecated
-     * Shows an input sheet which displays a popup with a series of options, from which the user is asked to choose.
-     * @param message The prompt message to show.
-     * @param options An array of option items.
-     * @param selectedIndex The index of the item to select initially.
-     * @return An array with a response code, the selected index and ok. The code will be one of NSAlertFirstButtonReturn or NSAlertSecondButtonReturn. The selection will be the integer index of the selected item. ok is the boolean code === NSAlertFirstButtonReturn.
-     */
-    export function getSelectionFromUser(
-      message: string,
-      options: string[],
-      selectedIndex?: number
-    ): [number, number, boolean];
-
-    /**
-     * The enumeration of the different input types for getInputFromUser().
-     */
-    export enum INPUT_TYPE {
-      string = 'string',
-      selection = 'selection',
-      slider = 'slider',
-    }
-
-    export interface StringInputOptions<T extends string | number> {
-      /** A secondary text to describe with more details the input. */
-      description?: string;
-      /** The type of the input. */
-      type?: INPUT_TYPE.string;
-      /** The initial value of the input. */
-      initialValue?: T;
-    }
-
-    export interface SelectionInputOptions {
-      /** A secondary text to describe with more details the input. */
-      description?: string;
-      /** The type of the input. */
-      type: INPUT_TYPE.selection;
-      /** The initial value of the input. */
-      initialValue?: string;
-      /** The possible choices that the user can make. Only used for a selection input. */
-      possibleValues: string[];
-    }
-
-    /**
-     * Shows a simple input sheet which displays a message, and asks for an input from the user.
-     * @param message The prompt message to show.
-     * @param options Options to customize the input sheet. Most of the options depends on the type of the input.
-     * @param callback A function called after the user entered the input. It is called with an Error if the user canceled the input and a string or number depending on the input type (or undefined).
-     */
-    export function getInputFromUser<T extends string | number>(
-      message: string,
-      options: StringInputOptions<T>,
-      callback: (err: any, value?: T) => void
-    ): void;
-    /**
-     * Shows a simple input sheet which displays a message, and asks for an input from the user.
-     * @param message The prompt message to show.
-     * @param options Options to customize the input sheet. Most of the options depends on the type of the input.
-     * @param callback A function called after the user entered the input. It is called with an Error if the user canceled the input and a string or number depending on the input type (or undefined).
-     */
-    export function getInputFromUser(
-      message: string,
-      options: SelectionInputOptions,
-      callback: (err: any, value?: string) => void
-    ): void;
-
-    /**
-     * Sketch has 2 themes: `light` and `dark`. If your plugin has some custom UI, it should support both as well.
-     */
-    export function getTheme(): 'dark' | 'light';
-  }
-  export = ui;
-}
-
-declare module 'sketch/async' {
-  namespace async {
-    export abstract class Fiber {
-      /**
-       * To end a fiber, call fiber.cleanup(). This will tell Sketch that it can garbage collect the script if no other fiber is running.
-       */
-      cleanup(): void;
-
-      /**
-       * You can run a function when the fiber is about to be cleaned up by setting a callback
-       */
-      onCleanup(cb: () => void): void;
-    }
-
-    /**
-     * By default, Sketch cleans up your script as soon as its callstack is empty. So if you schedule an asynchronous task, chances are that when the task returns, your script will be cleaned up and it will crash Sketch.
-     * A fiber is a way to keep track of a asynchronous task. The script will stay alive as long as at least one fiber is running.
-     */
-    export function createFiber(): Fiber;
-  }
-  export = async;
-}
-
-declare module 'sketch/settings' {
-  import dom = require('sketch/dom');
-  import data = require('sketch/data-supplier');
-  /**
-   * A set of functions to handle user settings. The settings are persisted when the user closes Sketch.
-   */
-  namespace settings {
-    /**
-     * Return the value of a setting scoped to your plugin for a given key.
-     * @param key The setting to look up.
-     * @return The setting that was stored for the given key. undefined if there was nothing
-     */
-    export function settingForKey(key: string): any;
-
-    /**
-     * Store a value of a setting scoped to your plugin for a given key.
-     * @param key The setting to set.
-     * @param value The value to set it to.
-     */
-    export function setSettingForKey(key: string, value: any): void;
-
-    /**
-     * Return the value of a Sketch setting for a given key.
-     * @param key The setting to look up.
-     * @return The setting that was stored for the given key. undefined if there was nothing
-     */
-    export function globalSettingForKey(key: string): any;
-
-    /**
-     * Store a value of a Sketch setting for a given key.
-     * @param key The setting to set.
-     * @param value The value to set it to.
-     */
-    export function setGlobalSettingForKey(key: string, value: any): void;
-
-    /**
-     * Return the value of a setting for a given key on a specific layer.
-     * @param layer The layer on which a setting is stored.
-     * @param key The setting to look up.
-     * @return The setting that was stored for the given key. undefined if there was nothing
-     */
-    export function layerSettingForKey(
-      layer: dom.Layer | dom.Override | data.DataOverride,
-      key: string
-    ): any;
-
-    /**
-     * Store a value of a setting for a given key on a specific layer.
-     * @param layer The layer on which the setting is set.
-     * @param key The setting to set.
-     * @param value The value to set it to.
-     */
-    export function setLayerSettingForKey(
-      layer: dom.Layer | dom.Override | data.DataOverride,
-      key: string,
-      value: any
-    ): void;
-
-    /**
-     * Return the value of a setting for a given key on a specific document
-     * @param document The document on which a setting is stored.
-     * @param key The setting to look up.
-     * @return The setting that was stored for the given key. undefined if there was nothing
-     */
-    export function documentSettingForKey(
-      document: dom.Document,
-      key: string
-    ): any;
-
-    /**
-     * Store a value of a setting for a given key on a specific document.
-     * @param document The document on which the setting is set.
-     * @param key The setting to set.
-     * @param value The value to set it to.
-     */
-    export function setDocumentSettingForKey(
-      document: dom.Document,
-      key: string,
-      value: any
-    ): void;
-
-    /**
-     * Return the value of a variable which is persisted when the plugin finishes to run but is
-     * not persisted when Sketch closes. It is useful when you want to keep a value between
-     * plugin's runs.
-     * @param key The variable to look up
-     * @return The variable that was saved.
-     */
-    export function sessionVariable(key: string): any;
-
-    /**
-     * Store a value of a variable which is persisted when the plugin finishes to run but is
-     * not persisted when Sketch closes. It is useful when you want to keep a value between
-     * plugin's runs.
-     * @param key The variable to set
-     * @param value The value to set it to
-     */
-    export function setSessionVariable(key: string, value: any): void;
-  }
-  export = settings;
-}
-
-declare module 'sketch/data-supplier' {
-  import dom = require('sketch/dom');
-  namespace data {
-    /**
-     * Register some data with a name and a key.
-     * @param type The data type. Currently public.text or public.image are the only allowed values.
-     * @param name The data name, will be used as the menu item title for the data.
-     * @param action The name of the Action that will be dispatched when the user requests some data. See supplyData.
-     */
-    export function registerDataSupplier(
-      type: 'public.text' | 'public.image',
-      name: string,
-      action: string
-    ): void;
-
-    /**
-     * The argument of the function called when you need to supply some data contains some very important information.
-     */
-    export interface DataSupplierContext extends SketchContext {
-      data: {
-        /**
-         * The number of data you need to supply
-         */
-        count: number;
-        /**
-         * A unique key to identify the supply request. You need to pass it to the supply method untouched.
-         */
-        key: string;
-        /**
-         * The array of native model objects for which we want some data. It can be either a native Text, a native Image or a native DataOverride (a special object when the data is for an Override)
-         */
-        items: (dom.Text | dom.Image | DataOverride)[];
-      };
-    }
-
-    /**
-     * A special object passed in the context of the action to supply data when the item is an Override.
-     */
-    export abstract class DataOverride extends dom.Component<MSDataOverride> {
-      /**
-       * The name of the override.
-       */
-      readonly id: string;
-      /**
-       * The override whose value will replaced by the supplied data.
-       */
-      readonly override: dom.Override;
-      /**
-       * The symbol instance that the override is on that will have the data replaced.
-       */
-      readonly symbolInstance: dom.SymbolInstance;
-    }
-
-    /**
-     * When the plugin providing the dynamic data has finished generating the data (could be an asynchronous operation), it will call this function with the data key and the data.
-     * @param key Should be equal to context.data.key
-     * @param data The list of values to provide. In case of public.image, the string is the path to the image. It needs to have a length equal to the context.data.count
-     */
-    export function supplyData(key: string, data: string[]): void;
-
-    /**
-     * When the plugin providing the dynamic data has finished generating the datum (could be an asynchronous operation), it will call this function with the data key and the datum.
-     * @param key Should be equal to context.data.key
-     * @param datum The value to provide. In case of public.image, the string is the path to the image. It needs to have a length equal to the context.data.count
-     * @param index The index of the item you are providing a value for.
-     */
-    export function supplyDataAtIndex(
-      key: string,
-      datum: string,
-      index: number
-    ): void;
-
-    /**
-     * When registering something, it is good practice to clean up after it. This is especially useful if when your plugin will be updated: the Shutdown Action will be called before the Startup will. It gives you the opportunity to update your handler cleanly.
-     */
-    export function deregisterDataSuppliers(): void;
-  }
-  export = data;
-}
-
-declare module 'sketch' {
-  import dom = require('sketch/dom');
-  import ui = require('sketch/ui');
-  import settings = require('sketch/settings');
-  import async = require('sketch/async');
-  import data = require('sketch/data-supplier');
-
-  class sketch {
-    static export: typeof dom.export;
-  }
-
-  namespace sketch {
-    export const version: { readonly api: string; readonly sketch: string };
-    // it'd be really nice if we could export * from dom, but https://github.com/Microsoft/TypeScript/issues/4336
-    export import Types = dom.Types;
-    export import getSelectedDocument = dom.getSelectedDocument;
-    export import getDocuments = dom.getDocuments;
-    export import Document = dom.Document;
-    export import Layer = dom.Layer;
-    export import LayerPropertyType = dom.LayerPropertyType;
-    export import LayersPropertyType = dom.LayersPropertyType;
-    export import GroupProperties = dom.GroupProperties;
-    export import Group = dom.Group;
-    export import PageProperties = dom.PageProperties;
-    export import Page = dom.Page;
-    export import ArtboardProperties = dom.ArtboardProperties;
-    export import Artboard = dom.Artboard;
-    export import ImageProperties = dom.ImageProperties;
-    export import Image = dom.Image;
-    export import ImageData = dom.ImageData;
-    export import ShapeProperties = dom.ShapeProperties;
-    export import Shape = dom.Shape;
-    export import ShapePath = dom.ShapePath;
-    export import TextProperties = dom.TextProperties;
-    export import Text = dom.Text;
-    export import TextFragment = dom.TextFragment;
-    export import SymbolMasterProperties = dom.SymbolMasterProperties;
-    export import SymbolMaster = dom.SymbolMaster;
-    export import SymbolInstanceProperties = dom.SymbolInstanceProperties;
-    export import SymbolInstance = dom.SymbolInstance;
-    export import Override = dom.Override;
-    export import FlowProperty = dom.FlowProperty;
-    export import Flow = dom.Flow;
-    export import HotSpotProperties = dom.HotSpotProperties;
-    export import HotSpot = dom.HotSpot;
-    export import Library = dom.Library;
-    export import ImportableObject = dom.ImportableObject;
-    export import Selection = dom.Selection;
-    export import Rectangle = dom.Rectangle;
-    export import IStyle = dom.IStyle;
-    export import Blur = dom.Blur;
-    export import Fill = dom.Fill;
-    export import Border = dom.Border;
-    export import BorderOptions = dom.BorderOptions;
-    export import Shadow = dom.Shadow;
-    export import Gradient = dom.Gradient;
-    export import GradientStop = dom.GradientStop;
-    export import Style = dom.Style;
-    export import SharedStyle = dom.SharedStyle;
-    export import fromNative = dom.fromNative;
-    export import ExportOptions = dom.ExportOptions;
-
-    // other modules that are exposed as sub-modules
-    export import UI = ui;
-
-    export import Settings = settings;
-
-    export import Async = async;
-
-    export import DataSupplier = data;
-  }
-  export = sketch;
 }
