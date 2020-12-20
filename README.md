@@ -35,6 +35,8 @@
 
 ------
 
+Notices: previous sketch-typings now rename to sketch-types for unify the types format.
+
 Community built set of [typescript declarations][dec] for writing [Sketch plugins][sketch-api].
 
 [dec]: https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html
@@ -66,7 +68,7 @@ Then you need to add the types directory to your tsconfig.json using the types o
 ```
 ## More types about sketch or macOS
 
-if you just want sketch internal types or cocoascript types, please check:
+if you just want sketch internal types or cocoascript types, please check these repo by [yesmeck](https://github.com/yesmeck):
 - [sketch-internal-types](https://github.com/sketch-community/sketch-internal-types)
 - [cocoascript-types](https://github.com/sketch-community/cocoascript-types)
 
