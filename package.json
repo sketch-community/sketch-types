@@ -1,6 +1,6 @@
 {
   "name": "sketch-typings",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "Community built set of typescript declarations for writing Sketch plugins.",
   "main": "index.js",
   "repository": {
@@ -12,8 +12,8 @@
     "test": "npm run lint",
     "prettier": "prettier **/*.ts",
     "lint": "npm run prettier -- -c",
-    "publish": "np  --no-cleanup --yolo",
-    "publish:next": "np  --no-cleanup --yolo --any-branch --tag=next"
+    "release": "np  --no-cleanup --yolo",
+    "release:next": "np  --no-cleanup --yolo --any-branch --tag=next"
   },
   "license": "MIT",
   "author": "Arvin Xu <arvinx@foxmail.com> (https://www.arvinx.com)",
