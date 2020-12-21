@@ -7,7 +7,6 @@ declare namespace sketchPublic {
   import NSArray = cocoascript.NSArray;
 
   interface SketchContext {
-    api(): any;
     command: MSPluginCommand;
     document: MSDocument;
     scriptPath: string;
