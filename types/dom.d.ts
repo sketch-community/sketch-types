@@ -6,7 +6,7 @@ declare module 'sketch/dom' {
      * @param options Options indicating which sizes and formats to use, etc..
      */
     static export(
-      objectToExport: dom.Layer | dom.Layer[] | dom.Page | dom.Page[],
+      objectToExport: dom.ToExportLayerTypes,
       options?: dom.ExportOptions
     ): void;
   }
@@ -118,6 +118,11 @@ declare module 'sketch/dom' {
       Text = 'Text',
       ColorAsset = 'ColorAsset',
     }
+
+    /**
+     * Type of objects to export
+     */
+    export type ToExportLayerTypes = Layer | Layer[] | Page | Page[];
 
     export type ShapeType = Shape | ShapePath;
     /**
