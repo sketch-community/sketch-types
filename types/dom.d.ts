@@ -564,7 +564,6 @@ declare module 'sketch/dom' {
       | ShapePath
       | Text
       | SymbolInstance
-      | HotSpot
       | Slice;
 
     /**
@@ -1439,8 +1438,7 @@ declare module 'sketch/dom' {
     /**
      * A Sketch hotspot. It is an instance of both Layer so all the methods defined there are available.
      */
-    // @ts-ignore
-    export class HotSpot extends Layer<MSHotspotLayer> {
+    export class HotSpot extends Component<MSHotspotLayer> {
       type: Types.HotSpot;
 
       constructor(properties?: HotSpotProperties);
