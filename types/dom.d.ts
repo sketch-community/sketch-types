@@ -550,6 +550,11 @@ declare module 'sketch/dom' {
     export type ChildLayer = GroupChildLayer;
 
     /**
+     * most basic layer
+     */
+    export type BasicLayer = PageChildLayer;
+
+    /**
      * Group Child Layer
      */
     export type GroupChildLayer =
