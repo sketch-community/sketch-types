@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.6.0](https://github.com/sketch-community/sketch-types/compare/v0.5.1...v0.6.0) (2021-06-12)
+
+
+### ✨ Features
+
+* add user-friendly named child layer ([6d509ab](https://github.com/sketch-community/sketch-types/commit/6d509ab))
+
 ## [0.5.1](https://github.com/sketch-community/sketch-types/compare/v0.5.0...v0.5.1) (2021-06-12)
 
 
