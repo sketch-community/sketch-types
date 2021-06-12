@@ -7,11 +7,11 @@ jobs:
     runs-on: ubuntu-16.04
 
     steps:
-    - name: Checkout project repository
-      uses: actions/checkout@v2
+      - name: Checkout project repository
+        uses: actions/checkout@v2
 
-    - name: install
-      run: npm install
+      - name: install
+        run: npm install
 
-    - name: test
-      run: npm ci && npm test
+      - name: test
+        run: npm test
