@@ -1,5 +1,17 @@
 # Changelog
 
+# [1.0.0](https://github.com/sketch-community/sketch-types/compare/v0.6.0...v1.0.0) (2021-06-12)
+
+
+### 🐛 Bug Fixes
+
+* remove hotspot from child layer ([cfcc882](https://github.com/sketch-community/sketch-types/commit/cfcc882))
+
+
+### 💥 BREAKING CHANGES
+
+* remove hotspot from GroupChildLayer
+
 # [0.6.0](https://github.com/sketch-community/sketch-types/compare/v0.5.1...v0.6.0) (2021-06-12)
 
 
