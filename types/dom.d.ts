@@ -240,7 +240,7 @@ declare module 'sketch/dom' {
           name: string;
           style: IStyle;
         }
-        >;
+      >;
 
       /**
        * A method to help find a shared style in the document.
@@ -260,7 +260,7 @@ declare module 'sketch/dom' {
           name: string;
           style: IStyle;
         }
-        >;
+      >;
 
       /**
        * A method to help find a shared style in the document.
@@ -336,7 +336,7 @@ declare module 'sketch/dom' {
           name: string;
           style: IStyle;
         }
-        >;
+      >;
 
       /**
        * The list of all shared layer styles defined in the document.
@@ -349,7 +349,7 @@ declare module 'sketch/dom' {
           name: string;
           style: IStyle;
         }
-        >;
+      >;
 
       /**
        * The color-space of the document
@@ -397,7 +397,7 @@ declare module 'sketch/dom' {
 
     export abstract class Layer<
       NativeType extends MSLayer = MSLayer
-      > extends Component<NativeType> {
+    > extends Component<NativeType> {
       /**
        * The unique ID of the Layer. (not to be confused with symbolId on SymbolInstances)
        */
@@ -497,7 +497,7 @@ declare module 'sketch/dom' {
 
     class StyledLayer<NativeType extends MSStyledLayer> extends Layer<
       NativeType
-      > {
+    > {
       /**
        * The style of the layer.
        */
@@ -543,7 +543,10 @@ declare module 'sketch/dom' {
       layers?: LayersPropertyType;
     }
 
-    export type ChildLayer =
+    /**
+     * Group Child Layer
+     */
+    export type GroupChildLayer =
       | Group
       | Image
       | Shape
@@ -553,15 +556,23 @@ declare module 'sketch/dom' {
       | HotSpot
       | Slice;
 
-    export type AllLayers = ChildLayer | Artboard | Page | SymbolMaster;
+    /**
+     * Page Child Layer
+     */
+    export type PageChildLayer = GroupChildLayer | Artboard | SymbolMaster;
+
+    /**
+     * All Layer Types
+     */
+    export type AllLayers = PageChildLayer | Page;
 
     class BaseGroup<
       NativeType extends MSLayerGroup = MSLayerGroup
-      > extends StyledLayer<NativeType> {
+    > extends StyledLayer<NativeType> {
       /**
        * The layers that this component groups together.
        */
-      layers: ChildLayer[];
+      layers: GroupChildLayer[];
 
       /**
        * Adjust the group to fit its children.
@@ -602,12 +613,18 @@ declare module 'sketch/dom' {
       frame?: Rectangle;
     }
 
-    export class Page extends BaseGroup<MSPage> {
+    export class Page extends StyledLayer<MSPage> {
       /**
        * The document the page is in.
        */
       parent: Document;
       type: Types.Page;
+
+      layers: PageChildLayer[];
+      /**
+       * Adjust the group to fit its children.
+       */
+      adjustToFit(): this;
 
       constructor(properties?: PageProperties);
 
@@ -642,7 +659,7 @@ declare module 'sketch/dom' {
 
     class BaseArtboard<
       NativeType extends MSArtboardGroup = MSArtboardGroup
-      > extends BaseGroup<MSArtboardGroup> {
+    > extends BaseGroup<MSArtboardGroup> {
       /**
        * The page the Artboard is in.
        */
@@ -1411,7 +1428,7 @@ declare module 'sketch/dom' {
     /**
      * A Sketch hotspot. It is an instance of both Layer so all the methods defined there are available.
      */
-      // @ts-ignore
+    // @ts-ignore
     export class HotSpot extends Layer<MSHotspotLayer> {
       type: Types.HotSpot;
 
