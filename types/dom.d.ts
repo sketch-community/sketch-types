@@ -544,6 +544,12 @@ declare module 'sketch/dom' {
     }
 
     /**
+     * reference to Child Layer
+     * @deprecated
+     */
+    export type ChildLayer = GroupChildLayer;
+
+    /**
      * Group Child Layer
      */
     export type GroupChildLayer =
