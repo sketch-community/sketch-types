@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.1.0](https://github.com/sketch-community/sketch-types/compare/v1.0.0...v1.1.0) (2021-06-28)
+
+
+### ✨ Features
+
+* add swatches interface and method ([1c5a66c](https://github.com/sketch-community/sketch-types/commit/1c5a66c))
+
 # [1.0.0](https://github.com/sketch-community/sketch-types/compare/v0.6.0...v1.0.0) (2021-06-12)
 
 
