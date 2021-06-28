@@ -2414,7 +2414,7 @@ declare module 'sketch/dom' {
       /**
        * If exporting a JPG, the compression level to use fo jpeg (with 0 being the completely compressed, 1.0 no compression) (defaults to 1.0).
        */
-      compression?: boolean;
+      compression?: number;
     }
 
     export interface ISwatch extends Omit<IColorAsset, 'type'> {}
