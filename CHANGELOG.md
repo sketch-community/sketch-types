@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/sketch-community/sketch-types/compare/v1.1.0...v1.1.1) (2021-06-28)
+
+
+### 🐛 Bug Fixes
+
+* compression is number ([f7e7a11](https://github.com/sketch-community/sketch-types/commit/f7e7a11))
+* compression is number ([3e598d2](https://github.com/sketch-community/sketch-types/commit/3e598d2))
+
 # [1.1.0](https://github.com/sketch-community/sketch-types/compare/v1.0.0...v1.1.0) (2021-06-28)
 
 
