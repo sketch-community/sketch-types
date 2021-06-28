@@ -202,6 +202,8 @@ declare module 'sketch/dom' {
        * The pages of the document.
        */
       pages: Page[];
+      swatches: Swatch[];
+
       type: Types.Document;
 
       constructor();
@@ -495,9 +497,9 @@ declare module 'sketch/dom' {
       getParentShape(): Shape | undefined;
     }
 
-    class StyledLayer<NativeType extends MSStyledLayer> extends Layer<
-      NativeType
-    > {
+    class StyledLayer<
+      NativeType extends MSStyledLayer
+    > extends Layer<NativeType> {
       /**
        * The style of the layer.
        */
@@ -2413,6 +2415,28 @@ declare module 'sketch/dom' {
        * If exporting a JPG, the compression level to use fo jpeg (with 0 being the completely compressed, 1.0 no compression) (defaults to 1.0).
        */
       compression?: boolean;
+    }
+
+    export interface ISwatch extends Omit<IColorAsset, 'type'> {}
+
+    export class Swatch implements ISwatch {
+      type: 'Swatch';
+      /**
+       * The name of the swatch, or null
+       */
+      name?: string;
+      /**
+       * The hex string for the color.
+       */
+      color: string;
+
+      referencingColor: sketchInternal.MSColor;
+
+      /**
+       * Get a referencing Color
+       * @return A Color that references a Color Variable, which you can use anywhere the API expects a Color object.
+       */
+      static from(swatch: ISwatch): Swatch;
     }
   }
   export = dom;
