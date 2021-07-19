@@ -643,6 +643,11 @@ declare module 'sketch/dom' {
        */
       static getSymbolsPage(document: Document): Page | undefined;
 
+      /**
+       * A method to create the Page with the name that Sketch will recognize as the Symbols Page.
+       */
+      static createSymbolsPage(): Page;
+
       constructor(properties?: PageProperties);
 
       /**
