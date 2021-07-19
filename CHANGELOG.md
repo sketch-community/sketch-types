@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.3.0](https://github.com/sketch-community/sketch-types/compare/v1.2.0...v1.3.0) (2021-07-19)
+
+
+### ✨ Features
+
+* add createSymbolsPage method ([5d1e7d0](https://github.com/sketch-community/sketch-types/commit/5d1e7d0))
+
 # [1.2.0](https://github.com/sketch-community/sketch-types/compare/v1.1.1...v1.2.0) (2021-07-19)
 
 
