@@ -638,6 +638,11 @@ declare module 'sketch/dom' {
        */
       adjustToFit(): this;
 
+      /**
+       * A method to get the Symbols Page of a Document.
+       */
+      static getSymbolsPage(document: Document): Page | undefined;
+
       constructor(properties?: PageProperties);
 
       /**
