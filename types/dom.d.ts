@@ -411,7 +411,7 @@ declare module 'sketch/dom' {
       /**
        * The group/document the layer is in.
        */
-      parent: Group | Document | Page;
+      parent: GroupTypeLayer;
       /**
        * If the layer is locked.
        */
@@ -555,6 +555,16 @@ declare module 'sketch/dom' {
      * most basic layer
      */
     export type BasicLayer = PageChildLayer;
+
+    /**
+     * group type layer
+     */
+    export type GroupTypeLayer =
+      | Artboard
+      | SymbolMaster
+      | Group
+      | Page
+      | Document;
 
     /**
      * Group Child Layer
