@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/sketch-community/sketch-types/compare/v1.3.0...v1.3.1) (2021-07-25)
+
+
+### 🐛 Bug Fixes
+
+* fix layer parent type ([93e9101](https://github.com/sketch-community/sketch-types/commit/93e9101))
+
 # [1.3.0](https://github.com/sketch-community/sketch-types/compare/v1.2.0...v1.3.0) (2021-07-19)
 
 
