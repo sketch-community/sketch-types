@@ -1639,7 +1639,7 @@ declare module 'sketch/dom' {
       /**
        * The Layers in the selection.
        */
-      readonly layers: AllLayers[];
+      readonly layers: PageChildLayer[];
       /**
        * The number of Layers in the selection.
        */
@@ -1649,11 +1649,11 @@ declare module 'sketch/dom' {
        */
       readonly isEmpty: boolean;
 
-      map<T>(func: (layer: AllLayers) => T): T[];
+      map<T>(func: (layer: PageChildLayer) => T): T[];
 
-      forEach(func: (layer: AllLayers) => void): void;
+      forEach(func: (layer: PageChildLayer) => void): void;
 
-      reduce<T>(func: (initial: T, layer: AllLayers) => T): T;
+      reduce<T>(func: (initial: T, layer: PageChildLayer) => T): T;
 
       /**
        * Clear the selection.
