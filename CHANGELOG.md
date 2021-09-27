@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/sketch-community/sketch-types/compare/v1.3.1...v1.3.2) (2021-09-27)
+
+
+### 🐛 Bug Fixes
+
+* fix Selection layers type ([f67f644](https://github.com/sketch-community/sketch-types/commit/f67f644))
+
 ## [1.3.1](https://github.com/sketch-community/sketch-types/compare/v1.3.0...v1.3.1) (2021-07-25)
 
 
