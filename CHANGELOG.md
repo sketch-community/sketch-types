@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3](https://github.com/sketch-community/sketch-types/compare/v1.3.2...v1.3.3) (2021-09-27)
+
+
+### 🐛 Bug Fixes
+
+* fix group layer type ([6d26e91](https://github.com/sketch-community/sketch-types/commit/6d26e91))
+
 ## [1.3.2](https://github.com/sketch-community/sketch-types/compare/v1.3.1...v1.3.2) (2021-09-27)
 
 
