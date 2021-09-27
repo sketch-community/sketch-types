@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2-beta.1](https://github.com/sketch-community/sketch-types/compare/v1.3.1...v1.3.2-beta.1) (2021-09-27)
+
+
+### 👷 Build System
+
+* refactor structure ([dcc9970](https://github.com/sketch-community/sketch-types/commit/dcc9970))
+
 ## [1.3.1](https://github.com/sketch-community/sketch-types/compare/v1.3.0...v1.3.1) (2021-07-25)
 
 
