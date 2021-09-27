@@ -559,12 +559,7 @@ declare module 'sketch/dom' {
     /**
      * group type layer
      */
-    export type GroupTypeLayer =
-      | Artboard
-      | SymbolMaster
-      | Group
-      | Page
-      | Document;
+    export type GroupTypeLayer = Artboard | SymbolMaster | Group | Page;
 
     /**
      * Group Child Layer
