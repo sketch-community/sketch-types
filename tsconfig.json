@@ -12,7 +12,7 @@
     "emitDecoratorMetadata": true,
     "typeRoots": ["./types"],
     "experimentalDecorators": true,
-    "types": ["cocoascript-types", "sketch-internal-types"],
+    "types": ["jest", "cocoascript-types", "sketch-internal-types"],
     "newLine": "lf",
     "strict": false,
     "moduleResolution": "node",
