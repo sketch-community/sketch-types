@@ -1,3 +1,5 @@
 declare module 'sketch-types' {
-  export { default as SketchFormat } from '@sketch-hq/sketch-file-format-ts';
+  import SketchFormat from '@sketch-hq/sketch-file-format-ts';
+  export default SketchFormat;
+  export { SketchFormat };
 }
