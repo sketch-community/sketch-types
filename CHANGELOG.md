@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/sketch-community/sketch-types/compare/v1.4.0...v1.4.1) (2021-11-07)
+
+
+### 🐛 Bug Fixes
+
+* 修正 SketchFormat 没添加的问题 ([97d2168](https://github.com/sketch-community/sketch-types/commit/97d2168))
+
 # [1.4.0](https://github.com/sketch-community/sketch-types/compare/v1.3.3...v1.4.0) (2021-11-07)
 
 
