@@ -1,6 +1,6 @@
 {
   "name": "sketch-types",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Community built set of typescript declarations for writing Sketch plugins.",
   "repository": {
     "type": "git",

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.2](https://github.com/sketch-community/sketch-types/compare/v1.4.1...v1.4.2) (2021-11-07)
+
+
+### 🐛 Bug Fixes
+
+* 补充 sketch types 的默认导出 ([62e8ddd](https://github.com/sketch-community/sketch-types/commit/62e8ddd))
+
 ## [1.4.1](https://github.com/sketch-community/sketch-types/compare/v1.4.0...v1.4.1) (2021-11-07)
 
 
