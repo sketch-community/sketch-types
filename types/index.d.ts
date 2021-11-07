@@ -5,3 +5,4 @@
 /// <reference path="./sketch.d.ts" />
 /// <reference path="./settings.d.ts" />
 /// <reference path="./dataSupplier.d.ts" />
+/// <reference path="./sketchFormat.d.ts" />
