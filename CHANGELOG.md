@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.3](https://github.com/sketch-community/sketch-types/compare/v1.4.2...v1.4.3) (2021-11-07)
+
+
+### 🐛 Bug Fixes
+
+* 修正 SketchFormat 的导出的类型定义 ([4d95f91](https://github.com/sketch-community/sketch-types/commit/4d95f91))
+
 ## [1.4.2](https://github.com/sketch-community/sketch-types/compare/v1.4.1...v1.4.2) (2021-11-07)
 
 
