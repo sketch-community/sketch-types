@@ -69,5 +69,6 @@ declare module 'sketch' {
 
     export import DataSupplier = data;
   }
+
   export = sketch;
 }
