@@ -562,6 +562,11 @@
     lodash "^4.17.4"
     read-pkg-up "^7.0.0"
 
+"@sketch-hq/sketch-file-format-ts@^6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@sketch-hq/sketch-file-format-ts/-/sketch-file-format-ts-6.1.1.tgz#959432a9b156e78f8afce7e6ca997969f8b7f682"
+  integrity sha512-nYCJV89IKRH+JOod38QfY7WsAZoYxMrbeFyslaGiIYrq+4YgATz4HY998vHlQqcLWk678Bi6604dmhK5zQT3xQ==
+
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"

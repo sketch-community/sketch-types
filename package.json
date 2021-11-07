@@ -15,11 +15,14 @@
   },
   "license": "MIT",
   "author": "Arvin Xu <arvinx@foxmail.com> (https://www.arvinx.com)",
+  "main": "./index.js",
   "types": "./types/index.d.ts",
   "files": [
-    "types"
+    "types",
+    "index.js"
   ],
   "dependencies": {
+    "@sketch-hq/sketch-file-format-ts": "^6.1.1",
     "cocoascript-types": "latest",
     "sketch-internal-types": "latest"
   },
