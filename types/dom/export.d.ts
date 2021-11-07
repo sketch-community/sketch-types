@@ -1,16 +1,6 @@
-declare module 'sketch/dom' {
-  class dom {
-    /**
-     * Export an object, using the options supplied.
-     * @param objectToExport The object to export.
-     * @param options Options indicating which sizes and formats to use, etc..
-     */
-    static export(
-      objectToExport: dom.ToExportLayerTypes,
-      options?: dom.ExportOptions
-    ): void;
-  }
+import { ExportResult } from 'sketch/dom';
 
+declare module 'sketch/dom' {
   namespace dom {
     export interface ExportOptions {
       /**
@@ -21,7 +11,7 @@ declare module 'sketch/dom' {
       /**
        * Comma separated list of formats to export to (png, jpg, svg, json or pdf) (default to "png").
        */
-      formats?: string;
+      formats?: ExportFileFormat | 'json';
       /**
        * Comma separated list of scales which determine the sizes at which the layers are exported (defaults to "1").
        */
@@ -69,6 +59,14 @@ declare module 'sketch/dom' {
      */
     export type ToExportLayerTypes = Layer | Layer[] | Page | Page[];
 
+    export type ExportFileFormat =
+      | 'jpg'
+      | 'png'
+      | 'tiff'
+      | 'eps'
+      | 'pdf'
+      | 'webp'
+      | 'svg';
     /**
      * An export format associated with a layer.
      */
@@ -77,7 +75,7 @@ declare module 'sketch/dom' {
       /**
        * The file format of the export.
        */
-      fileFormat: 'jpg' | 'png' | 'tiff' | 'eps' | 'pdf' | 'webp' | 'svg';
+      fileFormat: ExportFileFormat;
       /**
        * The prefix added to the file name.
        */
@@ -91,5 +89,32 @@ declare module 'sketch/dom' {
        */
       size: string;
     }
+
+    /**
+     * The method returns:
+     * undefined if options.output is undefined or a string
+     * an array of Buffers if objectToExport is an array and options.formats is an image format
+     * an array of Objects if objectToExport is an array and options.formats is json
+     * a Buffer if objectToExport is a single item and options.formats is an image format
+     * a Object if objectToExport is a single item and options.formats is json
+     */
+    export type ExportResult =
+      | ArrayBuffer
+      | ArrayBuffer[]
+      | Object[]
+      | Object
+      | void;
+  }
+
+  class dom {
+    /**
+     * Export an object, using the options supplied.
+     * @param objectToExport The object to export.
+     * @param options Options indicating which sizes and formats to use, etc..
+     */
+    static export(
+      objectToExport: dom.ToExportLayerTypes,
+      options?: dom.ExportOptions
+    ): ExportResult;
   }
 }
