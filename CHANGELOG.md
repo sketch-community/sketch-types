@@ -1,5 +1,17 @@
 # Changelog
 
+# [1.4.0-beta.1](https://github.com/sketch-community/sketch-types/compare/v1.3.4-beta.2...v1.4.0-beta.1) (2021-11-07)
+
+
+### ✨ Features
+
+* 添加 SketchFormat ([6cecdd2](https://github.com/sketch-community/sketch-types/commit/6cecdd2))
+
+
+### 🐛 Bug Fixes
+
+* fix export types ([cbee577](https://github.com/sketch-community/sketch-types/commit/cbee577)), closes [#26](https://github.com/sketch-community/sketch-types/issues/26)
+
 ## [1.3.4-beta.2](https://github.com/sketch-community/sketch-types/compare/v1.3.4-beta.1...v1.3.4-beta.2) (2021-11-07)
 
 
