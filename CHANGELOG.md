@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.4-beta.2](https://github.com/sketch-community/sketch-types/compare/v1.3.4-beta.1...v1.3.4-beta.2) (2021-11-07)
+
+
+### 🐛 Bug Fixes
+
+* 尝试修复类型错误 ([01d62b0](https://github.com/sketch-community/sketch-types/commit/01d62b0))
+
 ## [1.3.4-beta.1](https://github.com/sketch-community/sketch-types/compare/v1.3.3...v1.3.4-beta.1) (2021-11-07)
 
 
