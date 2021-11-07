@@ -1,5 +1,33 @@
 # Changelog
 
+# [1.4.0](https://github.com/sketch-community/sketch-types/compare/v1.3.3...v1.4.0) (2021-11-07)
+
+
+### ✨ Features
+
+* 添加 SketchFormat ([6cecdd2](https://github.com/sketch-community/sketch-types/commit/6cecdd2))
+
+
+### 🎫 Chores
+
+* **release**: v1.3.2-beta.1 [skip ci] ([5488540](https://github.com/sketch-community/sketch-types/commit/5488540))
+* **release**: v1.3.4-beta.1 [skip ci] ([e5bd112](https://github.com/sketch-community/sketch-types/commit/e5bd112))
+* **release**: v1.3.4-beta.2 [skip ci] ([bfc0a50](https://github.com/sketch-community/sketch-types/commit/bfc0a50))
+* **release**: v1.4.0-beta.1 [skip ci] ([8b30699](https://github.com/sketch-community/sketch-types/commit/8b30699)), closes [#26](https://github.com/sketch-community/sketch-types/issues/26)
+* update package.json ([05d7f98](https://github.com/sketch-community/sketch-types/commit/05d7f98))
+
+
+### 🐛 Bug Fixes
+
+* fix export types ([cbee577](https://github.com/sketch-community/sketch-types/commit/cbee577)), closes [#26](https://github.com/sketch-community/sketch-types/issues/26)
+* 尝试修复类型错误 ([01d62b0](https://github.com/sketch-community/sketch-types/commit/01d62b0))
+
+
+### 👷 Build System
+
+* refactor structure ([dcc9970](https://github.com/sketch-community/sketch-types/commit/dcc9970))
+* 重构类型定义文件结构 ([e1289f4](https://github.com/sketch-community/sketch-types/commit/e1289f4))
+
 # [1.4.0-beta.1](https://github.com/sketch-community/sketch-types/compare/v1.3.4-beta.2...v1.4.0-beta.1) (2021-11-07)
 
 
