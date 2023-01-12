@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.4](https://github.com/sketch-community/sketch-types/compare/v1.4.3...v1.4.4) (2023-01-12)
+
+
+### 🎫 Chores
+
+* 升级基础设施 ([8194f70](https://github.com/sketch-community/sketch-types/commit/8194f70))
+
+
+### 🐛 Bug Fixes
+
+* 修正SymbolInstance的resizeWithSmartLayout方法丢失的问题 ([3965299](https://github.com/sketch-community/sketch-types/commit/3965299))
+
 ## [1.4.3](https://github.com/sketch-community/sketch-types/compare/v1.4.2...v1.4.3) (2021-11-07)
 
 
