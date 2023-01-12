@@ -65,6 +65,11 @@ declare module 'sketch/dom' {
        * @param value The value of override to set. Can be a string or an NSImage or a symbolId depending on the type of the override.
        */
       setOverrideValue(override: Override, value: string | NSImage): this;
+
+      /**
+       * In order to trigger a Smart Layout resize in an instance, for example after changing an override value, call the `resizeWithSmartLayout()` method.
+       */
+      resizeWithSmartLayout(): void;
     }
   }
 }
