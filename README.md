@@ -6,7 +6,6 @@
 
 [![NPM version][npm-image]][npm-url] [![NPM downloads][download-image]][download-url] [![install size][npm-size]][npm-size-url]
 
-[![david deps][david-image]][david-url] [![david devDeps][david-dev-image]][david-dev-url]
 
 <!-- npm url -->
 
@@ -26,9 +25,6 @@
 [deploy-ci]: https://github.com/sketch-community/sketch-types/workflows/Deploy%20CI/badge.svg
 [test-ci-url]: https://github.com/sketch-community/sketch-types/actions?query=workflow%3ATest%20CI
 [deploy-ci-ci]: https://github.com/sketch-community/sketch-types/actions?query=workflow%3ADeploy%20CI
-[david-image]: https://img.shields.io/david/sketch-community/sketch-types?style=flat-square
-[david-dev-url]: https://david-dm.org/sketch-community/sketch-types?type=dev
-[david-dev-image]: https://img.shields.io/david/dev/sketch-community/sketch-types?style=flat-square
 [david-url]: https://david-dm.org/sketch-community/sketch-types
 [download-image]: https://img.shields.io/npm/dm/sketch-types.svg?style=flat-square
 [download-url]: https://npmjs.org/package/sketch-types
@@ -53,7 +49,7 @@ npm i sketch-types -D
 or 
 
 ```sh
-yarn add sketch-types -D
+pnpm i sketch-types -D
 ```
 
 

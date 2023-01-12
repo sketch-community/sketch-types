@@ -3,22 +3,29 @@ on:
   push:
     branches:
       - master
-      - beta
 
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - uses: c-hive/gha-yarn-cache@v1
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
 
-      - name: install
-        run: yarn
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install deps
+        run: pnpm install
 
       - name: release
-        run: yarn release
+        run: pnpm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
