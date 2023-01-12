@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.5](https://github.com/sketch-community/sketch-types/compare/v1.4.4...v1.4.5) (2023-01-12)
+
+
+### 🐛 Bug Fixes
+
+* 修正 SymbolInstance 的 parent 类型不准确的问题 ([dbad29a](https://github.com/sketch-community/sketch-types/commit/dbad29a))
+
 ## [1.4.4](https://github.com/sketch-community/sketch-types/compare/v1.4.3...v1.4.4) (2023-01-12)
 
 
