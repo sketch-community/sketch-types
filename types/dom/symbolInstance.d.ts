@@ -35,7 +35,7 @@ declare module 'sketch/dom' {
       /**
        * The group the SymbolInstance is in.
        */
-      parent: Group;
+      parent: GroupTypeLayer;
       /**
        * The unique ID of the Symbol that the instance and its master share.
        */
